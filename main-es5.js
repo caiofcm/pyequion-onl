@@ -1,0 +1,2739 @@
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
+  /***/
+  "./$$_lazy_route_resource lazy recursive":
+  /*!******************************************************!*\
+    !*** ./$$_lazy_route_resource lazy namespace object ***!
+    \******************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function $$_lazy_route_resourceLazyRecursive(module, exports) {
+    function webpackEmptyAsyncContext(req) {
+      // Here Promise.resolve().then() is used instead of new Promise() to prevent
+      // uncaught exception popping up in devtools
+      return Promise.resolve().then(function () {
+        var e = new Error("Cannot find module '" + req + "'");
+        e.code = 'MODULE_NOT_FOUND';
+        throw e;
+      });
+    }
+
+    webpackEmptyAsyncContext.keys = function () {
+      return [];
+    };
+
+    webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+    module.exports = webpackEmptyAsyncContext;
+    webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
+  /*!**************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
+    \**************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAppComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<!-- Toolbar -->\n<div class=\"toolbar\" role=\"banner\">\n  <img width=\"40\" alt=\"Angular Logo\" src=\"../assets/pyequion_logo.png\" />\n  <h1 style=\"margin: 0; font-size: 1.5rem;\">PyEquIon Speciation</h1>\n  <div class=\"spacer\"></div>\n  <img width=\"125\" alt=\"Angular Logo\" src=\"../assets/atoms_logo.png\" />\n</div>\n\n<div class=\"content\" role=\"main\">\n\n  <!-- <app-table-species></app-table-species> -->\n  <!-- <div style=\";\"> -->\n  <app-stepper></app-stepper>\n  <!-- </div> -->\n\n  <!-- <div [appMath]=\"mathLatex\"></div> -->\n\n  <!-- <div [appMath]>\n    $E = mc^2$ -->\n  <!-- </div> -->\n\n  <!-- <div [appMath]>\n    {{'$\\\\ce{CaCO3}$'}}\n  </div> -->\n\n  <!-- <div mathjax>mathjax typesetting\n    $$\n    x = 1\n    $$\n\n    \\( y = 2 \\)\n    </div> -->\n\n</div>\n\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<footer class=\"toolbar\">\n  Author: Caio Curitiba Marcellos, Researcher at ATOMS/UFRJ/BR - Any bug or suggestion? Contact me at: caiocuritiba@gmail.com.\n</footer>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-compound/autocomplete-compound.component.html":
+  /*!******************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-compound/autocomplete-compound.component.html ***!
+    \******************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppAutocompleteCompoundAutocompleteCompoundComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form class=\"example-form\">\n  <mat-form-field class=\"example-full-width\">\n    <input type=\"text\" placeholder=\"Compound\" aria-label=\"Number\" matInput [formControl]=\"control\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\n        {{option}}\n      </mat-option>\n    </mat-autocomplete>\n  </mat-form-field>\n</form>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html":
+  /*!**************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html ***!
+    \**************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppStepperStepperComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<!-- <button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\n</button> -->\n<!-- <div style=\"max-width: 900px; text-align: center;\"> -->\n  <mat-horizontal-stepper [linear]=\"isLinear\" #stepper>\n    <mat-step [stepControl]=\"compoundsInputForm\">\n      <ng-template matStepLabel>Chemical Species</ng-template>\n      <form [formGroup]=\"compoundsInputForm\">\n        <div style=\"display: flex;\">\n          <div formArrayName=\"compounds\" style=\"flex-basis: 50%;\">\n            <div *ngFor=\"let compound of compoundsInput.controls; let i=index\" class=\"compound-input\">\n              <app-autocomplete-compound [control]=\"compound\"></app-autocomplete-compound>\n              <button *ngIf=\"(i+1) === compoundsInput.length\" mat-icon-button (click)=\"handleMoreInputCompound()\">\n                <mat-icon>add_circle</mat-icon>\n              </button>\n              <button mat-icon-button (click)=\"handleRemoveCompound(i)\">\n                <mat-icon>remove_circle</mat-icon>\n              </button>\n            </div>\n          </div>\n          <div style=\"flex-basis: 50%; display: flex; flex-direction: column;\">\n            <mat-form-field>\n              <mat-label>Closing Equation Type</mat-label>\n              <mat-select formControlName=\"closingEqType\">\n                <mat-option *ngFor=\"let closingType of closingEquationTypes\" [value]=\"closingType.value\">\n                  {{closingType.label}}\n                </mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field>\n              <input matInput formControlName=\"initial_feed_mass_balance\" placeholder=\"Species direct from Feed\"\n                type=\"text\">\n            </mat-form-field>\n          </div>\n        </div>\n        <div>\n          <button mat-raised-button matStepperNext [disabled]=\"!compoundsInputForm.valid\"\n            (click)=\"handleCreateEquilibrium()\">\n            Create System ></button>\n        </div>\n      </form>\n    </mat-step>\n    <mat-step [stepControl]=\"secondFormGroup\">\n      <ng-template matStepLabel>Equilibrium Calculation</ng-template>\n      <div style=\"display: flex; justify-content: center; flex-direction: column;\">\n        <div style=\"display: flex; justify-content: flex-start; flex-grow: 1;\">\n          <div style=\"flex-basis: 50%;\">\n            <!-- <div *ngIf=\"pyequionStore.reactions$ | async as reactions; else loading\"> -->\n            <div *ngIf=\"!pyequionStore.isLoading; else loading\">\n              <!-- <div *ngFor=\"let reaction of reactions$ | async\"> -->\n              <!-- <div *ngFor=\"let reaction of pyequionStore.reactionsLatex$ | async\"> -->\n              <!-- <div *ngIf=\"reactionsDisplay$ | async as reactionsDisplay\"> -->\n                <!-- <div [mathjax]=\"[reactionsDisplay]\">\n                  \\( {{ '{}' }} \\)\n                </div> -->\n                <!-- <div [appMath]=\"'\\\\ce{ {H2O^{}} <=> {OH^{-}} +{H^{+}}} '\"></div> -->\n                <!-- <div [appMath]=\"'a_2'\"></div> -->\n                <!-- <div [appMath]=\"{latex: '$\\\\ce{CaCO3}$ \\\\\\\\'}\"> -->\n                  <!-- <div [appMath]=\"{latex: '$\\ce{ {H2O^{}} <=> {OH^{-}} +{H^{+}}} \\\\\\ce{ {Cd^{2+}} +2.0{Cl^{-}} <=> {CdCl2^{}}} $'}\"> -->\n                  <!-- </div> -->\n                <!-- <br> -->\n              <!-- </div> -->\n              <div *ngFor=\"let reaction of pyequionStore.reactionsLatex$ | async\">\n                  <div [appMath]=\"{latex: '$' + reaction + '$'}\"></div>\n              </div>\n              <!-- <div *ngIf=\"solidReactionsDisplay$ | async as solidReactionsDisplay\">\n                <h5>Possible Solid Reactions:</h5>\n                <div [mathjax]=\"[solidReactionsDisplay]\">\n                  \\( {{ '{}' }} \\)\n                </div>\n                <br>\n              </div> -->\n              <h5>Possible Solid Reactions:</h5>\n              <div *ngFor=\"let reaction of pyequionStore.solidReactionsLatex$ | async\">\n                  <div [appMath]=\"{latex: '$' + reaction + '$'}\"></div>\n              </div>\n              <br>\n            </div>\n          </div>\n          <form [formGroup]=\"equilibriumCalcForm\" style=\"flex-basis: 50%;\">\n            <h4 style=\"margin-bottom: 3px;\">Concentrations (mM):</h4>\n            <div formArrayName=\"concentrations\">\n              <div *ngFor=\"let conc of concentrations.controls; let i=index\">\n                <mat-form-field>\n                  <input matInput [formControl]=\"conc\" [placeholder]=\"compoundsInput.controls[i].value\" type=\"number\">\n                </mat-form-field>\n              </div>\n            </div>\n            <div>\n              <mat-form-field>\n                <input matInput formControlName=\"temperature\" placeholder=\"Temperature [&#176;C]\" type=\"number\">\n              </mat-form-field>\n            </div>\n            <div *ngIf=\"compoundsInputForm.get('closingEqType').value !== NONE\">\n              <mat-form-field>\n                <input matInput formControlName=\"extraParameter\"\n                  [placeholder]=\"mapCloseEquationLabel[compoundsInputForm.get('closingEqType').value]\" type=\"number\">\n              </mat-form-field>\n            </div>\n            <mat-slide-toggle formControlName=\"allowPrecipitation\">Allow Precipitation</mat-slide-toggle>\n            <div style=\"padding-top: 20px;\">\n              <mat-form-field>\n                <mat-label>Nonideality Model</mat-label>\n                <mat-select formControlName=\"nonidealityType\">\n                  <mat-option *ngFor=\"let nonIdeality of nonIdealitiesTypes\" [value]=\"nonIdeality.value\">\n                    {{nonIdeality.label}}\n                  </mat-option>\n                </mat-select>\n              </mat-form-field>\n            </div>\n          </form>\n        </div>\n        <div>\n          <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n          <button mat-raised-button matStepperNext\n            [disabled]=\"(!pyequionStore.eqSystem$) && (equilibriumCalcForm.invalid)\"\n            (click)=\"handleCalculateEquilibrium()\">\n            Calculate and Advance\n          </button>\n        </div>\n      </div>\n    </mat-step>\n    <mat-step>\n      <ng-template matStepLabel>Solution Results</ng-template>\n      <!-- <div *ngIf=\"pyequionStore.solutionResult$ | async as solutionResult; else loading\"> -->\n      <div *ngIf=\"((!pyequionStore.isLoading)); else loading\">\n        <div *ngIf=\"pyequionStore.solutionResult$ | async as solutionResult\">\n\n          <!-- <div *ngFor=\"let reaction of solutionResult \">\n            {{solutionResult}}\n            <br>\n        </div> -->\n          <div style=\"display: flex; justify-content: space-between;\">\n            <p><b>pH:</b> {{solutionResult.pH | number: '1.3-3'}}</p>\n            <p><b>I:</b> {{solutionResult.I*1e3 | number: '1.3-3'}} mM</p>\n            <p><b>SC:</b> {{solutionResult.sc*1e6 | number: '1.3-3'}} <span mathjax>\\(\\mu\\)</span>S/cm</p>\n            <p><b>DIC:</b> {{solutionResult.DIC*1e3 | number: '1.3-3'}} mM</p>\n            <!-- <mathjax [content]=\"''\"></mathjax> -->\n          </div>\n          <!-- <div>\n          <b>Solid candidates:</b>\n          <ul>\n            <li *ngFor=\"let solidName of solutionResult.solid_names\">\n              {{solidName}}\n            </li>\n          </ul>\n        </div> -->\n          <div style=\"display: flex; flex-direction: row;\">\n            <div style=\"flex-basis: 50%;\">\n              <b>Species:</b>\n              <ul>\n                <li *ngFor=\"let species of speciesDisplay$ | async\">\n                  <b>{{species.name}}:</b> {{species.conc*1e3 | number: '1.3-3'}} mM\n                </li>\n              </ul>\n            </div>\n            <div style=\"flex-basis: 50%;\">\n              <div>\n                <b>Saturation Index:</b>\n                <ul>\n                  <li *ngFor=\"let solidName of objectKeys(solutionResult.saturation_index)\">\n                    <!-- <span *ngIf=\"solutionResult.saturation_index[solidName]\"> -->\n                    {{solidName}}: {{solutionResult.saturation_index[solidName] | number: '1.3-3'}}\n                    <!-- </span> -->\n                  </li>\n                </ul>\n              </div>\n              <div *ngIf=\"precipitatedDisplay$ | async as precipitatedDisplay\">\n                <b>Precipitation Concentration:</b>\n                <ul>\n                  <!-- <li *ngFor=\"let solidName of objectKeys(solutionResult.preciptation_conc)\">\n                    <span *ngIf=\"solutionResult.preciptation_conc[solidName]\">\n                      {{solidName}}: {{solutionResult.preciptation_conc[solidName] | number: '1.3-3'}}\n                    </span>\n                  </li> -->\n                  <li *ngFor=\"let solidName of precipitatedDisplay\">\n                    <span *ngIf=\"solutionResult.preciptation_conc[solidName]\">\n                      {{solidName}}: {{solutionResult.preciptation_conc[solidName]*1e3 | number: '1.3-3'}} mM\n                    </span>\n                  </li>\n                </ul>\n              </div>\n              <div>\n                <b>Ionic Activity Product and log(Ksp):</b>\n                <ul>\n                  <li *ngFor=\"let solidName of objectKeys(solutionResult.ionic_activity_prod)\">\n                    <span *ngIf=\"solutionResult.ionic_activity_prod[solidName]\">\n                      {{solidName}}: {{solutionResult.ionic_activity_prod[solidName].toPrecision(4) }};\n                      Ksp = {{solutionResult.log_K_solubility[solidName] | number: '1.3-3'}}\n                    </span>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div>\n        <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n        <button mat-raised-button (click)=\"stepper.reset()\">Reset</button>\n      </div>\n    </mat-step>\n  </mat-horizontal-stepper>\n\n  <div style=\"text-align: center;\">\n    <ng-template #loading>\n      <div style=\"text-align: center;\">\n        <mat-spinner></mat-spinner>\n      </div>\n    </ng-template>\n  </div>\n<!-- </div> -->\n\n<!--\n<h3>Form Input Compounds</h3>\n<p>\n  Form Status: {{ compoundsInputForm.status }}\n</p>\n\n<h3>Equlibrium Calculation Form</h3>\n<p>\n  Form Status: {{ equilibriumCalcForm.status }}\n</p>\n-->\n\n<!-- <p>\n  {{equilibriumCalcForm.value | json}}\n</p> -->\n\n<!-- <p>\n  {{compoundsInputForm.value | json}}\n</p> -->\n\n\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/table-species/table-species.component.html":
+  /*!**************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/table-species/table-species.component.html ***!
+    \**************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppTableSpeciesTableSpeciesComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"mat-elevation-z8\">\n  <table mat-table class=\"full-width-table\" matSort aria-label=\"Elements\">\n    <!-- Id Column -->\n    <ng-container matColumnDef=\"id\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>\n      <td mat-cell *matCellDef=\"let row\">{{row.id}}</td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"name\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>\n      <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n  </table>\n\n  <mat-paginator #paginator\n      [length]=\"dataSource?.data.length\"\n      [pageIndex]=\"0\"\n      [pageSize]=\"50\"\n      [pageSizeOptions]=\"[25, 50, 100, 250]\">\n  </mat-paginator>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/tslib/tslib.es6.js":
+  /*!*****************************************!*\
+    !*** ./node_modules/tslib/tslib.es6.js ***!
+    \*****************************************/
+
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+
+  /***/
+  function node_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__extends", function () {
+      return __extends;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__assign", function () {
+      return _assign;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__rest", function () {
+      return __rest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+      return __decorate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__param", function () {
+      return __param;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+      return __metadata;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+      return __awaiter;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__generator", function () {
+      return __generator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+      return __exportStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__values", function () {
+      return __values;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__read", function () {
+      return __read;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spread", function () {
+      return __spread;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+      return __spreadArrays;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__await", function () {
+      return __await;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+      return __asyncGenerator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+      return __asyncDelegator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+      return __asyncValues;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+      return __makeTemplateObject;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+      return __importStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+      return __importDefault;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+    
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+    /* global Reflect, Promise */
+
+
+    var _extendStatics = function extendStatics(d, b) {
+      _extendStatics = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+      } || function (d, b) {
+        for (var p in b) {
+          if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+      };
+
+      return _extendStatics(d, b);
+    };
+
+    function __extends(d, b) {
+      _extendStatics(d, b);
+
+      function __() {
+        this.constructor = d;
+      }
+
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var _assign = function __assign() {
+      _assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+
+        return t;
+      };
+
+      return _assign.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+      var t = {};
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+      }
+
+      if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+      }
+      return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+      return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+          try {
+            step(generator.next(value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function rejected(value) {
+          try {
+            step(generator["throw"](value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function step(result) {
+          result.done ? resolve(result.value) : new P(function (resolve) {
+            resolve(result.value);
+          }).then(fulfilled, rejected);
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+      });
+    }
+
+    function __generator(thisArg, body) {
+      var _ = {
+        label: 0,
+        sent: function sent() {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: []
+      },
+          f,
+          y,
+          t,
+          g;
+      return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+      }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+      }), g;
+
+      function verb(n) {
+        return function (v) {
+          return step([n, v]);
+        };
+      }
+
+      function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+
+        while (_) {
+          try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+
+            switch (op[0]) {
+              case 0:
+              case 1:
+                t = op;
+                break;
+
+              case 4:
+                _.label++;
+                return {
+                  value: op[1],
+                  done: false
+                };
+
+              case 5:
+                _.label++;
+                y = op[1];
+                op = [0];
+                continue;
+
+              case 7:
+                op = _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+
+              default:
+                if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                  _ = 0;
+                  continue;
+                }
+
+                if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                  _.label = op[1];
+                  break;
+                }
+
+                if (op[0] === 6 && _.label < t[1]) {
+                  _.label = t[1];
+                  t = op;
+                  break;
+                }
+
+                if (t && _.label < t[2]) {
+                  _.label = t[2];
+
+                  _.ops.push(op);
+
+                  break;
+                }
+
+                if (t[2]) _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+            }
+
+            op = body.call(thisArg, _);
+          } catch (e) {
+            op = [6, e];
+            y = 0;
+          } finally {
+            f = t = 0;
+          }
+        }
+
+        if (op[0] & 5) throw op[1];
+        return {
+          value: op[0] ? op[1] : void 0,
+          done: true
+        };
+      }
+    }
+
+    function __exportStar(m, exports) {
+      for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+      }
+    }
+
+    function __values(o) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator],
+          i = 0;
+      if (m) return m.call(o);
+      return {
+        next: function next() {
+          if (o && i >= o.length) o = void 0;
+          return {
+            value: o && o[i++],
+            done: !o
+          };
+        }
+      };
+    }
+
+    function __read(o, n) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m) return o;
+      var i = m.call(o),
+          r,
+          ar = [],
+          e;
+
+      try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+          ar.push(r.value);
+        }
+      } catch (error) {
+        e = {
+          error: error
+        };
+      } finally {
+        try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+          if (e) throw e.error;
+        }
+      }
+
+      return ar;
+    }
+
+    function __spread() {
+      for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+      }
+
+      return ar;
+    }
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+
+    ;
+
+    function __await(v) {
+      return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var g = generator.apply(thisArg, _arguments || []),
+          i,
+          q = [];
+      return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n) {
+        if (g[n]) i[n] = function (v) {
+          return new Promise(function (a, b) {
+            q.push([n, v, a, b]) > 1 || resume(n, v);
+          });
+        };
+      }
+
+      function resume(n, v) {
+        try {
+          step(g[n](v));
+        } catch (e) {
+          settle(q[0][3], e);
+        }
+      }
+
+      function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+      }
+
+      function fulfill(value) {
+        resume("next", value);
+      }
+
+      function reject(value) {
+        resume("throw", value);
+      }
+
+      function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+      }
+    }
+
+    function __asyncDelegator(o) {
+      var i, p;
+      return i = {}, verb("next"), verb("throw", function (e) {
+        throw e;
+      }), verb("return"), i[Symbol.iterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n, f) {
+        i[n] = o[n] ? function (v) {
+          return (p = !p) ? {
+            value: __await(o[n](v)),
+            done: n === "return"
+          } : f ? f(v) : v;
+        } : f;
+      }
+    }
+
+    function __asyncValues(o) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var m = o[Symbol.asyncIterator],
+          i;
+      return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i);
+
+      function verb(n) {
+        i[n] = o[n] && function (v) {
+          return new Promise(function (resolve, reject) {
+            v = o[n](v), settle(resolve, reject, v.done, v.value);
+          });
+        };
+      }
+
+      function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function (v) {
+          resolve({
+            value: v,
+            done: d
+          });
+        }, reject);
+      }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+      if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+          value: raw
+        });
+      } else {
+        cooked.raw = raw;
+      }
+
+      return cooked;
+    }
+
+    ;
+
+    function __importStar(mod) {
+      if (mod && mod.__esModule) return mod;
+      var result = {};
+      if (mod != null) for (var k in mod) {
+        if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+      }
+      result.default = mod;
+      return result;
+    }
+
+    function __importDefault(mod) {
+      return mod && mod.__esModule ? mod : {
+        default: mod
+      };
+    }
+    /***/
+
+  },
+
+  /***/
+  "./src/app/app-routing.module.ts":
+  /*!***************************************!*\
+    !*** ./src/app/app-routing.module.ts ***!
+    \***************************************/
+
+  /*! exports provided: AppRoutingModule */
+
+  /***/
+  function srcAppAppRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function () {
+      return AppRoutingModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+
+    var routes = [];
+
+    var AppRoutingModule = function AppRoutingModule() {
+      _classCallCheck(this, AppRoutingModule);
+    };
+
+    AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+      exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })], AppRoutingModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/app.component.scss":
+  /*!************************************!*\
+    !*** ./src/app/app.component.scss ***!
+    \************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAppComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ":host {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 14px;\n  color: #333;\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin: 8px 0;\n}\n\np {\n  margin: 0;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.toolbar {\n  height: 60px;\n  padding-left: 10px;\n  display: flex;\n  align-items: center;\n  background-color: #1976d2;\n  color: white;\n}\n\n.toolbar img {\n  margin: 0 16px;\n}\n\n.content {\n  margin: 32px auto;\n  padding: 0 32px;\n  max-width: 960px;\n}\n\na,\na:visited,\na:hover {\n  color: #1976d2;\n  text-decoration: none;\n}\n\na:hover {\n  color: #125699;\n}\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 2.5rem;\n  background-color: #1976d2;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSwwSkFBQTtFQUNBLGVBQUE7RUFDQSxXQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQ0FBQTtFQUNBLGtDQUFBO0FDQUY7O0FER0E7Ozs7OztFQU1FLGFBQUE7QUNBRjs7QURHQTtFQUNFLFNBQUE7QUNBRjs7QURHQTtFQUNFLE9BQUE7QUNBRjs7QURHQTtFQUNFLFlBQUE7RUFFQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQ0RGOztBREtBO0VBQ0UsY0FBQTtBQ0ZGOztBREtBO0VBRUUsaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUNIRjs7QURRQTs7O0VBR0UsY0FBQTtFQUNBLHFCQUFBO0FDTEY7O0FEUUE7RUFDRSxjQUFBO0FDTEY7O0FEUUE7RUFDRSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0FDTEYiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbjpob3N0IHtcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgXCJTZWdvZSBVSVwiLCBSb2JvdG8sIEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYsIFwiQXBwbGUgQ29sb3IgRW1vamlcIiwgXCJTZWdvZSBVSSBFbW9qaVwiLCBcIlNlZ29lIFVJIFN5bWJvbFwiO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGNvbG9yOiAjMzMzO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbn1cblxuaDEsXG5oMixcbmgzLFxuaDQsXG5oNSxcbmg2IHtcbiAgbWFyZ2luOiA4cHggMDtcbn1cblxucCB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnNwYWNlciB7XG4gIGZsZXg6IDE7XG59XG5cbi50b29sYmFyIHtcbiAgaGVpZ2h0OiA2MHB4O1xuICAvLyBtYXJnaW46IC04cHg7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbiAgY29sb3I6IHdoaXRlO1xuICAvLyBmb250LXdlaWdodDogNjAwO1xufVxuXG4udG9vbGJhciBpbWcge1xuICBtYXJnaW46IDAgMTZweDtcbn1cblxuLmNvbnRlbnQge1xuICAvLyBkaXNwbGF5OiBmbGV4O1xuICBtYXJnaW46IDMycHggYXV0bztcbiAgcGFkZGluZzogMCAzMnB4O1xuICBtYXgtd2lkdGg6IDk2MHB4O1xuICAvLyBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAvLyBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG5hLFxuYTp2aXNpdGVkLFxuYTpob3ZlciB7XG4gIGNvbG9yOiAjMTk3NmQyO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbmE6aG92ZXIge1xuICBjb2xvcjogIzEyNTY5OTtcbn1cblxuZm9vdGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDIuNXJlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbn1cbiIsIjpob3N0IHtcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgXCJTZWdvZSBVSVwiLCBSb2JvdG8sIEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYsIFwiQXBwbGUgQ29sb3IgRW1vamlcIiwgXCJTZWdvZSBVSSBFbW9qaVwiLCBcIlNlZ29lIFVJIFN5bWJvbFwiO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGNvbG9yOiAjMzMzO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbn1cblxuaDEsXG5oMixcbmgzLFxuaDQsXG5oNSxcbmg2IHtcbiAgbWFyZ2luOiA4cHggMDtcbn1cblxucCB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnNwYWNlciB7XG4gIGZsZXg6IDE7XG59XG5cbi50b29sYmFyIHtcbiAgaGVpZ2h0OiA2MHB4O1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuLnRvb2xiYXIgaW1nIHtcbiAgbWFyZ2luOiAwIDE2cHg7XG59XG5cbi5jb250ZW50IHtcbiAgbWFyZ2luOiAzMnB4IGF1dG87XG4gIHBhZGRpbmc6IDAgMzJweDtcbiAgbWF4LXdpZHRoOiA5NjBweDtcbn1cblxuYSxcbmE6dmlzaXRlZCxcbmE6aG92ZXIge1xuICBjb2xvcjogIzE5NzZkMjtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG5hOmhvdmVyIHtcbiAgY29sb3I6ICMxMjU2OTk7XG59XG5cbmZvb3RlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYm90dG9tOiAwO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAyLjVyZW07XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG59Il19 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/app.component.ts":
+  /*!**********************************!*\
+    !*** ./src/app/app.component.ts ***!
+    \**********************************/
+
+  /*! exports provided: AppComponent */
+
+  /***/
+  function srcAppAppComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppComponent", function () {
+      return AppComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _pyequion_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./pyequion.service */
+    "./src/app/pyequion.service.ts");
+
+    var AppComponent =
+    /*#__PURE__*/
+    function () {
+      function AppComponent(pyequionService) {
+        _classCallCheck(this, AppComponent);
+
+        this.pyequionService = pyequionService;
+        this.title = 'speciation-app';
+      }
+
+      _createClass(AppComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {// this.pyequionService.createEquilibrium().subscribe(resp => {
+          //   console.log(resp, '')
+          // })
+        }
+      }]);
+
+      return AppComponent;
+    }();
+
+    AppComponent.ctorParameters = function () {
+      return [{
+        type: _pyequion_service__WEBPACK_IMPORTED_MODULE_2__["PyequionService"]
+      }];
+    };
+
+    AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-root',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./app.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./app.component.scss */
+      "./src/app/app.component.scss")).default]
+    })], AppComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/app.module.ts":
+  /*!*******************************!*\
+    !*** ./src/app/app.module.ts ***!
+    \*******************************/
+
+  /*! exports provided: AppModule */
+
+  /***/
+  function srcAppAppModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppModule", function () {
+      return AppModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _modules_aux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./modules_aux */
+    "./src/app/modules_aux.ts");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./app.component */
+    "./src/app/app.component.ts");
+    /* harmony import */
+
+
+    var _table_species_table_species_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./table-species/table-species.component */
+    "./src/app/table-species/table-species.component.ts");
+    /* harmony import */
+
+
+    var _stepper_stepper_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./stepper/stepper.component */
+    "./src/app/stepper/stepper.component.ts");
+    /* harmony import */
+
+
+    var _autocomplete_compound_autocomplete_compound_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./autocomplete-compound/autocomplete-compound.component */
+    "./src/app/autocomplete-compound/autocomplete-compound.component.ts");
+    /* harmony import */
+
+
+    var ngx_mathjax__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ngx-mathjax */
+    "./node_modules/ngx-mathjax/fesm2015/ngx-mathjax.js");
+    /* harmony import */
+
+
+    var _math_math_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./math/math.module */
+    "./src/app/math/math.module.ts"); // import { MathjaxComponent } from './mathjax/mathjax.component';
+    // import { MatTableModule } from '@angular/material/table';
+    // import { MatPaginatorModule } from '@angular/material/paginator';
+    // import { MatSortModule } from '@angular/material/sort';
+
+
+    var moduleListImport = [].concat(_toConsumableArray(_modules_aux__WEBPACK_IMPORTED_MODULE_2__["default"]), [ngx_mathjax__WEBPACK_IMPORTED_MODULE_7__["MathJaxModule"].forRoot({
+      version: '2.7.5',
+      config: 'TeX-AMS_HTML',
+      hostname: 'cdnjs.cloudflare.com'
+    }), _math_math_module__WEBPACK_IMPORTED_MODULE_8__["MathModule"].forRoot()]);
+
+    var AppModule = function AppModule() {
+      _classCallCheck(this, AppModule);
+    };
+
+    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _table_species_table_species_component__WEBPACK_IMPORTED_MODULE_4__["TableSpeciesComponent"], _stepper_stepper_component__WEBPACK_IMPORTED_MODULE_5__["StepperComponent"], _autocomplete_compound_autocomplete_compound_component__WEBPACK_IMPORTED_MODULE_6__["AutocompleteCompoundComponent"]],
+      imports: moduleListImport,
+      providers: [],
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+    })], AppModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/autocomplete-compound/autocomplete-compound.component.scss":
+  /*!****************************************************************************!*\
+    !*** ./src/app/autocomplete-compound/autocomplete-compound.component.scss ***!
+    \****************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppAutocompleteCompoundAutocompleteCompoundComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dG9jb21wbGV0ZS1jb21wb3VuZC9hdXRvY29tcGxldGUtY29tcG91bmQuY29tcG9uZW50LnNjc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/autocomplete-compound/autocomplete-compound.component.ts":
+  /*!**************************************************************************!*\
+    !*** ./src/app/autocomplete-compound/autocomplete-compound.component.ts ***!
+    \**************************************************************************/
+
+  /*! exports provided: AutocompleteCompoundComponent */
+
+  /***/
+  function srcAppAutocompleteCompoundAutocompleteCompoundComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AutocompleteCompoundComponent", function () {
+      return AutocompleteCompoundComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _data_compounds_input_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../data/compounds-input.json */
+    "./src/data/compounds-input.json");
+
+    var _data_compounds_input_json__WEBPACK_IMPORTED_MODULE_3___namespace =
+    /*#__PURE__*/
+    __webpack_require__.t(
+    /*! ../../data/compounds-input.json */
+    "./src/data/compounds-input.json", 1); //'../data/compounds-input.json'
+
+
+    var AutocompleteCompoundComponent =
+    /*#__PURE__*/
+    function () {
+      function AutocompleteCompoundComponent() {
+        _classCallCheck(this, AutocompleteCompoundComponent);
+
+        // myControl = new FormControl();
+        this.options = _data_compounds_input_json__WEBPACK_IMPORTED_MODULE_3__.compounds;
+      }
+
+      _createClass(AutocompleteCompoundComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this = this;
+
+          this.filteredOptions = this.control.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (value) {
+            return _this._filter(value);
+          }));
+        }
+      }, {
+        key: "_filter",
+        value: function _filter(value) {
+          var filterValue = value.toLowerCase();
+          return this.options.filter(function (option) {
+            return option.toLowerCase().includes(filterValue);
+          });
+        }
+      }]);
+
+      return AutocompleteCompoundComponent;
+    }();
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], AutocompleteCompoundComponent.prototype, "control", void 0);
+    AutocompleteCompoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-autocomplete-compound',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./autocomplete-compound.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/autocomplete-compound/autocomplete-compound.component.html")).default,
+      changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./autocomplete-compound.component.scss */
+      "./src/app/autocomplete-compound/autocomplete-compound.component.scss")).default]
+    })], AutocompleteCompoundComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/math/math.directive.ts":
+  /*!****************************************!*\
+    !*** ./src/app/math/math.directive.ts ***!
+    \****************************************/
+
+  /*! exports provided: MathDirective */
+
+  /***/
+  function srcAppMathMathDirectiveTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MathDirective", function () {
+      return MathDirective;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _math_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./math.service */
+    "./src/app/math/math.service.ts");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var MathDirective =
+    /*#__PURE__*/
+    function () {
+      function MathDirective(service, el) {
+        _classCallCheck(this, MathDirective);
+
+        this.service = service;
+        this.el = el;
+        this.alive$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this._el = el.nativeElement;
+      }
+
+      _createClass(MathDirective, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this2 = this;
+
+          this.service.ready().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.alive$)).subscribe(function (res) {
+            _this2.service.render(_this2._el, _this2.appMath);
+          });
+        }
+      }, {
+        key: "ngOnChanges",
+        value: function ngOnChanges(changes) {
+          console.log(changes);
+        }
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this.alive$.next(false);
+        }
+      }]);
+
+      return MathDirective;
+    }();
+
+    MathDirective.ctorParameters = function () {
+      return [{
+        type: _math_service__WEBPACK_IMPORTED_MODULE_2__["MathServiceImpl"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }];
+    };
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], MathDirective.prototype, "appMath", void 0);
+    MathDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+      selector: '[appMath]'
+    })], MathDirective);
+    /***/
+  },
+
+  /***/
+  "./src/app/math/math.module.ts":
+  /*!*************************************!*\
+    !*** ./src/app/math/math.module.ts ***!
+    \*************************************/
+
+  /*! exports provided: MathModule */
+
+  /***/
+  function srcAppMathMathModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MathModule", function () {
+      return MathModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _math_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./math.service */
+    "./src/app/math/math.service.ts");
+    /* harmony import */
+
+
+    var _math_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./math.directive */
+    "./src/app/math/math.directive.ts");
+
+    var MathModule_1;
+
+    var MathModule = MathModule_1 =
+    /*#__PURE__*/
+    function () {
+      function MathModule(mathService) {
+        _classCallCheck(this, MathModule);
+
+        console.log("constructor module"); // see https://docs.mathjax.org/en/latest/advanced/dynamic.html
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+        script.async = true;
+        document.getElementsByTagName('head')[0].appendChild(script); // const script2 = document.createElement('script') as HTMLScriptElement;
+        // script2.type = 'text/javascript';
+        // script2.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+        // script2.async = true;
+        // document.getElementsByTagName('head')[0].appendChild(script2);
+
+        var config = document.createElement('script');
+        config.type = 'text/x-mathjax-config';
+        config.text = "\n    MathJax.Ajax.config.path[\"mhchem\"] = \"https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2\";\n    MathJax.Hub.Config({\n        skipStartupTypeset: true,\n        tex2jax: { inlineMath: [[\"$\", \"$\"]],displayMath:[[\"$$\", \"$$\"]] },\n        TeX: {\n          extensions: [\"[mhchem]/mhchem.js\"]\n        }\n      });\n      MathJax.Hub.Register.StartupHook('End', () => {\n        window.hubReady.next();\n        window.hubReady.complete();\n      });\n    ";
+        document.getElementsByTagName('head')[0].appendChild(config);
+      }
+
+      _createClass(MathModule, null, [{
+        key: "forRoot",
+        value: function forRoot() {
+          console.log("for root");
+          return {
+            ngModule: MathModule_1,
+            providers: [{
+              provide: _math_service__WEBPACK_IMPORTED_MODULE_2__["MathServiceImpl"],
+              useClass: _math_service__WEBPACK_IMPORTED_MODULE_2__["MathServiceImpl"]
+            }]
+          };
+        }
+      }]);
+
+      return MathModule;
+    }();
+
+    MathModule.ctorParameters = function () {
+      return [{
+        type: _math_service__WEBPACK_IMPORTED_MODULE_2__["MathServiceImpl"]
+      }];
+    };
+
+    MathModule = MathModule_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_math_directive__WEBPACK_IMPORTED_MODULE_3__["MathDirective"]],
+      exports: [_math_directive__WEBPACK_IMPORTED_MODULE_3__["MathDirective"]]
+    })], MathModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/math/math.service.ts":
+  /*!**************************************!*\
+    !*** ./src/app/math/math.service.ts ***!
+    \**************************************/
+
+  /*! exports provided: MathServiceImpl */
+
+  /***/
+  function srcAppMathMathServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MathServiceImpl", function () {
+      return MathServiceImpl;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var MathServiceImpl =
+    /*#__PURE__*/
+    function () {
+      function MathServiceImpl() {
+        _classCallCheck(this, MathServiceImpl);
+
+        console.log("service constructor");
+        this.notifier = new rxjs__WEBPACK_IMPORTED_MODULE_1__["ReplaySubject"]();
+        window.hubReady = this.notifier;
+      }
+
+      _createClass(MathServiceImpl, [{
+        key: "ready",
+        value: function ready() {
+          return this.notifier;
+        }
+      }, {
+        key: "render",
+        value: function render(element, math) {
+          if (math) {
+            if (math.latex) {
+              element.innerText = math.latex;
+            } else {
+              element.innerHTML = math.mathml;
+            }
+          }
+
+          MathJax.Hub.Queue(['Typeset', MathJax.Hub, element]);
+        }
+      }]);
+
+      return MathServiceImpl;
+    }();
+
+    MathServiceImpl = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()], MathServiceImpl);
+    /***/
+  },
+
+  /***/
+  "./src/app/modules_aux.ts":
+  /*!********************************!*\
+    !*** ./src/app/modules_aux.ts ***!
+    \********************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppModules_auxTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./app-routing.module */
+    "./src/app/app-routing.module.ts");
+    /* harmony import */
+
+
+    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/platform-browser/animations */
+    "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/material */
+    "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/material/input */
+    "./node_modules/@angular/material/esm2015/input.js");
+    /* harmony import */
+
+
+    var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/material/autocomplete */
+    "./node_modules/@angular/material/esm2015/autocomplete.js");
+    /* harmony import */
+
+
+    var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! @angular/material/datepicker */
+    "./node_modules/@angular/material/esm2015/datepicker.js");
+    /* harmony import */
+
+
+    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @angular/material/form-field */
+    "./node_modules/@angular/material/esm2015/form-field.js");
+    /* harmony import */
+
+
+    var _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! @angular/material/radio */
+    "./node_modules/@angular/material/esm2015/radio.js");
+    /* harmony import */
+
+
+    var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! @angular/material/select */
+    "./node_modules/@angular/material/esm2015/select.js");
+    /* harmony import */
+
+
+    var _angular_material_slider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! @angular/material/slider */
+    "./node_modules/@angular/material/esm2015/slider.js");
+    /* harmony import */
+
+
+    var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! @angular/material/slide-toggle */
+    "./node_modules/@angular/material/esm2015/slide-toggle.js");
+    /* harmony import */
+
+
+    var _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! @angular/material/menu */
+    "./node_modules/@angular/material/esm2015/menu.js");
+    /* harmony import */
+
+
+    var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! @angular/material/sidenav */
+    "./node_modules/@angular/material/esm2015/sidenav.js");
+    /* harmony import */
+
+
+    var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    /*! @angular/material/toolbar */
+    "./node_modules/@angular/material/esm2015/toolbar.js");
+    /* harmony import */
+
+
+    var _angular_material_list__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    /*! @angular/material/list */
+    "./node_modules/@angular/material/esm2015/list.js");
+    /* harmony import */
+
+
+    var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    /*! @angular/material/grid-list */
+    "./node_modules/@angular/material/esm2015/grid-list.js");
+    /* harmony import */
+
+
+    var _angular_material_card__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    /*! @angular/material/card */
+    "./node_modules/@angular/material/esm2015/card.js");
+    /* harmony import */
+
+
+    var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! @angular/material/stepper */
+    "./node_modules/@angular/material/esm2015/stepper.js");
+    /* harmony import */
+
+
+    var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    /*! @angular/material/tabs */
+    "./node_modules/@angular/material/esm2015/tabs.js");
+    /* harmony import */
+
+
+    var _angular_material_expansion__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    /*! @angular/material/expansion */
+    "./node_modules/@angular/material/esm2015/expansion.js");
+    /* harmony import */
+
+
+    var _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    /*! @angular/material/button-toggle */
+    "./node_modules/@angular/material/esm2015/button-toggle.js");
+    /* harmony import */
+
+
+    var _angular_material_chips__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    /*! @angular/material/chips */
+    "./node_modules/@angular/material/esm2015/chips.js");
+    /* harmony import */
+
+
+    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    /*! @angular/material/icon */
+    "./node_modules/@angular/material/esm2015/icon.js");
+    /* harmony import */
+
+
+    var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    /*! @angular/material/progress-spinner */
+    "./node_modules/@angular/material/esm2015/progress-spinner.js");
+    /* harmony import */
+
+
+    var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+    /*! @angular/material/progress-bar */
+    "./node_modules/@angular/material/esm2015/progress-bar.js");
+    /* harmony import */
+
+
+    var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+    /*! @angular/material/dialog */
+    "./node_modules/@angular/material/esm2015/dialog.js");
+    /* harmony import */
+
+
+    var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+    /*! @angular/material/tooltip */
+    "./node_modules/@angular/material/esm2015/tooltip.js");
+    /* harmony import */
+
+
+    var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
+    /*! @angular/material/snack-bar */
+    "./node_modules/@angular/material/esm2015/snack-bar.js");
+    /* harmony import */
+
+
+    var _angular_material_table__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
+    /*! @angular/material/table */
+    "./node_modules/@angular/material/esm2015/table.js");
+    /* harmony import */
+
+
+    var _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
+    /*! @angular/material/sort */
+    "./node_modules/@angular/material/esm2015/sort.js");
+    /* harmony import */
+
+
+    var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
+    /*! @angular/material/paginator */
+    "./node_modules/@angular/material/esm2015/paginator.js"); //Angular Material Components
+
+
+    var a = [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"], _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_8__["MatAutocompleteModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepickerModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__["MatFormFieldModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"], _angular_material_slider__WEBPACK_IMPORTED_MODULE_13__["MatSliderModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__["MatSlideToggleModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_15__["MatMenuModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_16__["MatSidenavModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_17__["MatToolbarModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_18__["MatListModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_19__["MatGridListModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_20__["MatCardModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_21__["MatStepperModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_22__["MatTabsModule"], _angular_material_expansion__WEBPACK_IMPORTED_MODULE_23__["MatExpansionModule"], _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_24__["MatButtonToggleModule"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_25__["MatChipsModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_26__["MatIconModule"], _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_27__["MatProgressSpinnerModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_28__["MatProgressBarModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__["MatDialogModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_30__["MatTooltipModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_31__["MatSnackBarModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_32__["MatTableModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_33__["MatSortModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_34__["MatPaginatorModule"]];
+    /* harmony default export */
+
+    __webpack_exports__["default"] = a;
+    /***/
+  },
+
+  /***/
+  "./src/app/pyequion-store.service.ts":
+  /*!*******************************************!*\
+    !*** ./src/app/pyequion-store.service.ts ***!
+    \*******************************************/
+
+  /*! exports provided: PyequionStoreService */
+
+  /***/
+  function srcAppPyequionStoreServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PyequionStoreService", function () {
+      return PyequionStoreService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _pyequion_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./pyequion.service */
+    "./src/app/pyequion.service.ts");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var PyequionStoreService =
+    /*#__PURE__*/
+    function () {
+      function PyequionStoreService(pyequionService) {
+        var _this3 = this;
+
+        _classCallCheck(this, PyequionStoreService);
+
+        this.pyequionService = pyequionService;
+        this.eqSystemSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null);
+        this.eqSystem$ = this.eqSystemSubject.asObservable();
+        this.isLoading = false;
+        this.solutionResultSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null);
+        this.solutionResult$ = this.solutionResultSubject.asObservable();
+        this.reactionsLatex$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
+          if (!eqSystem) return null;
+          var convertedReacs = eqSystem.reactionsLatex.map(_this3.fixReactionLatex());
+          return convertedReacs;
+        }));
+        this.solidReactionsLatex$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
+          if (!eqSystem) return null;
+          var convertedReacs = eqSystem.solidReactionsLatex.map(_this3.fixReactionLatex());
+          if (convertedReacs.length == 1 && convertedReacs[0] == "\\ce <=}") return null; //some kind of bug... (fix backend?)
+
+          console.log(convertedReacs);
+          return convertedReacs;
+        }));
+      }
+
+      _createClass(PyequionStoreService, [{
+        key: "fixReactionLatex",
+        value: function fixReactionLatex() {
+          return function (reac) {
+            if (reac.includes('irrev')) {
+              var aux1 = 'a';
+            } else if (reac.includes('__')) {
+              var _aux = reac.split('__');
+
+              var aux2 = _aux[1].split('^');
+
+              var solidName = aux2[0];
+              var newStr = reac.replace('__' + solidName, "_{".concat(solidName, "}"));
+              return newStr;
+            } else {
+              return reac;
+            }
+          };
+        }
+      }, {
+        key: "createEquilibrium",
+        value: function createEquilibrium(inputCompounds) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee() {
+            var respRPC, eqSystem;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    this.isLoading = true;
+                    _context.next = 3;
+                    return this.pyequionService.createEquilibrium(inputCompounds).toPromise();
+
+                  case 3:
+                    respRPC = _context.sent;
+                    this.isLoading = false;
+                    eqSystem = respRPC.result;
+                    this.eqSystemSubject.next(eqSystem);
+
+                  case 7:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "calculateEquilibrium",
+        value: function calculateEquilibrium(inputEqCalculation) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee2() {
+            var respRPC, solutionResult;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    this.isLoading = true;
+                    _context2.next = 3;
+                    return this.pyequionService.calculateEquilibrium(inputEqCalculation).toPromise();
+
+                  case 3:
+                    respRPC = _context2.sent;
+                    solutionResult = respRPC.result;
+                    this.isLoading = false;
+                    this.solutionResultSubject.next(solutionResult);
+
+                  case 7:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
+        }
+      }, {
+        key: "emitValueEqSystem",
+        value: function emitValueEqSystem(val) {
+          this.eqSystemSubject.next(val);
+        }
+      }, {
+        key: "emitValueSolutionResults",
+        value: function emitValueSolutionResults(val) {
+          this.solutionResultSubject.next(val);
+        }
+      }]);
+
+      return PyequionStoreService;
+    }();
+
+    PyequionStoreService.ctorParameters = function () {
+      return [{
+        type: _pyequion_service__WEBPACK_IMPORTED_MODULE_2__["PyequionService"]
+      }];
+    };
+
+    PyequionStoreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], PyequionStoreService);
+    /***/
+  },
+
+  /***/
+  "./src/app/pyequion.service.ts":
+  /*!*************************************!*\
+    !*** ./src/app/pyequion.service.ts ***!
+    \*************************************/
+
+  /*! exports provided: PyequionService */
+
+  /***/
+  function srcAppPyequionServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PyequionService", function () {
+      return PyequionService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../environments/environment */
+    "./src/environments/environment.ts");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var URL = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].urlBackend;
+    var httpOptions = {
+      headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    var PyequionService =
+    /*#__PURE__*/
+    function () {
+      // private reactionsSubject = new BehaviorSubject<any>(null);
+      // public reactions$ = this.reactionsSubject.asObservable();
+      function PyequionService(http) {
+        _classCallCheck(this, PyequionService);
+
+        this.http = http; // // Test only
+        // this.createEquilibrium().subscribe(resp => {
+        //   console.log(resp)
+        // })
+      } // public emitSimDataBeforeRun(v: any) {
+      //   this.reactionsSubject.next(v);
+      // }
+
+
+      _createClass(PyequionService, [{
+        key: "createEquilibrium",
+        value: function createEquilibrium(inputCompounds) {
+          var _this4 = this;
+
+          var body = {
+            "jsonrpc": "2.0",
+            "method": "App.create_equilibrium",
+            "params": inputCompounds,
+            "id": "1"
+          };
+          return this.http.post(URL, body, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (newHero) {
+            return _this4.log("posted");
+          }), // debounceTime(1000),
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["exhaustMap"])(function (resp) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(resp);
+          }), //(resp => of(resp)),
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (resp) {
+            console.log('HIT MAP in Post CREATE');
+
+            if (!resp) {
+              throw new Error('Request for pyequion backend failed');
+            }
+
+            if ('error' in resp) {
+              throw new Error(resp.error.message);
+            }
+
+            return resp;
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.handleError('createEq')));
+        }
+      }, {
+        key: "calculateEquilibrium",
+        value: function calculateEquilibrium(inputEqCalculation) {
+          var _this5 = this;
+
+          var body = {
+            "jsonrpc": "2.0",
+            "method": "App.solve_equilibrium",
+            "params": inputEqCalculation,
+            "id": "1"
+          };
+          return this.http.post(URL, body, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (newHero) {
+            return _this5.log("posted");
+          }), // debounceTime(1000),
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["exhaustMap"])(function (resp) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(resp);
+          }), //(resp => of(resp)),
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (resp) {
+            console.log('HIT MAP in Post SOLVE');
+
+            if (!resp) {
+              throw new Error('Request for pyequion backend failed');
+            }
+
+            if ('error' in resp) {
+              throw new Error(resp.error.message);
+            }
+
+            return resp;
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["catchError"])(this.handleError('createEq')));
+        } // return this.http.post<JSONRPCModel>(URL, body, httpOptions).pipe(
+        //   tap((newHero: JSONRPCModel) => this.log(`posted`)),
+
+        /**
+         * Handle Http operation that failed.
+         * Let the app continue.
+         * @param operation - name of the operation that failed
+         * @param result - optional value to return as the observable result
+         */
+
+      }, {
+        key: "handleError",
+        value: function handleError() {
+          var _this6 = this;
+
+          var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'operation';
+          var result = arguments.length > 1 ? arguments[1] : undefined;
+          return function (error) {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+            // TODO: better job of transforming error for user consumption
+
+            _this6.log("".concat(operation, " failed: ").concat(error.message)); // Let the app keep running by returning an empty result.
+
+
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
+          };
+        }
+      }, {
+        key: "log",
+        value: function log(msg) {
+          console.log(msg);
+        }
+      }]);
+
+      return PyequionService;
+    }();
+
+    PyequionService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
+    PyequionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], PyequionService);
+    /***/
+  },
+
+  /***/
+  "./src/app/stepper/stepper.component.scss":
+  /*!************************************************!*\
+    !*** ./src/app/stepper/stepper.component.scss ***!
+    \************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppStepperStepperComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "mat-horizontal-stepper {\n  width: 100%;\n}\n\n.compound-input {\n  display: flex;\n  flex-direction: row;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvc3RlcHBlci9zdGVwcGVyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9zdGVwcGVyL3N0ZXBwZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0Y7O0FERUE7RUFDRSxhQUFBO0VBQ0EsbUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL3N0ZXBwZXIvc3RlcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1ob3Jpem9udGFsLXN0ZXBwZXIge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNvbXBvdW5kLWlucHV0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbn1cbiIsIm1hdC1ob3Jpem9udGFsLXN0ZXBwZXIge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNvbXBvdW5kLWlucHV0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbn0iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/stepper/stepper.component.ts":
+  /*!**********************************************!*\
+    !*** ./src/app/stepper/stepper.component.ts ***!
+    \**********************************************/
+
+  /*! exports provided: StepperComponent */
+
+  /***/
+  function srcAppStepperStepperComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "StepperComponent", function () {
+      return StepperComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _pyequion_store_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../pyequion-store.service */
+    "./src/app/pyequion-store.service.ts");
+
+    var pCO2_ref = 0.0003908408957924021;
+    var mapCloseEquationEnum = {
+      'OPEN': 0,
+      'CARBON_TOTAL': 1,
+      'PH': 2,
+      'NONE': 3
+    };
+    var mapCloseEquationInverse = {
+      0: 'OPEN',
+      1: 'CARBON_TOTAL',
+      2: 'PH',
+      3: 'NONE'
+    };
+    var mapTypeActivityCalculation = {
+      'IDEAL': 0,
+      'DEBYE': 1,
+      'DEBYE_MEAN': 2,
+      'PITZER': 3
+    };
+
+    var StepperComponent =
+    /*#__PURE__*/
+    function () {
+      function StepperComponent(fb, pyequionStore) {
+        _classCallCheck(this, StepperComponent);
+
+        this.fb = fb;
+        this.pyequionStore = pyequionStore;
+        this.objectKeys = Object.keys; // private eqSystemSubject = new BehaviorSubject<EquilibriumModel>(null);
+        // public eqSystem$ = this.eqSystemSubject.asObservable();
+
+        this.NONE = mapCloseEquationEnum['NONE'];
+        this.isLinear = false; // reactions$: Observable<any[]>
+        // readonly NONE_VAL = 3
+
+        this.closingEquationTypes = [{
+          label: 'Open',
+          value: 0
+        }, {
+          label: 'Closed',
+          value: 1
+        }, {
+          label: 'pH',
+          value: 2
+        }, {
+          label: 'None',
+          value: mapCloseEquationEnum['NONE']
+        }];
+        this.mapCloseEquationLabel = {
+          0: 'CO2 Pressure (atm)',
+          1: 'Total Carbone (mM??)',
+          2: 'pH',
+          3: null
+        };
+        this.nonIdealitiesTypes = [{
+          label: 'Debye-Huckel (B-dot)',
+          value: 'DEBYE'
+        }, {
+          label: 'Pitzer',
+          value: 'PITZER'
+        }];
+        this.reactionsDisplay$ = this.pyequionStore.reactionsLatex$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.mergeLatexReactions()));
+        this.solidReactionsDisplay$ = this.pyequionStore.solidReactionsLatex$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.mergeLatexReactions()));
+        this.speciesDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
+          if (!solRst) return null;
+          var collection = solRst.specie_names.map(function (v, i) {
+            return {
+              name: v,
+              conc: solRst.c_molal[i]
+            };
+          }).filter(function (val) {
+            return val.name !== 'H2O' && !val.name.includes('g');
+          });
+          return collection;
+        }));
+        this.precipitatedDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
+          if (!solRst) return null;
+          var greaterZero = Object.keys(solRst.preciptation_conc).filter(function (key) {
+            return solRst.preciptation_conc[key] > 1e-20;
+          });
+          return greaterZero;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (names) {
+          if (!names) return null;
+          return !!names.length;
+        }));
+      }
+
+      _createClass(StepperComponent, [{
+        key: "mergeLatexReactions",
+        value: function mergeLatexReactions() {
+          return function (reactions) {
+            if (!reactions) return null;
+            var allReactions = '';
+            reactions.forEach(function (v) {
+              allReactions += "".concat(v, " \\\\");
+            });
+            return allReactions;
+          };
+        }
+      }, {
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this7 = this;
+
+          // this.firstFormGroup = this.fb.group({
+          //   firstCtrl: ['', Validators.required]
+          // });
+          this.compoundsInputForm = this.fb.group({
+            compounds: this.fb.array([this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)]),
+            closingEqType: [mapCloseEquationEnum['NONE'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            initial_feed_mass_balance: ['']
+          });
+          this.equilibriumCalcForm = this.fb.group({
+            // secondCtrl: ['', Validators.required],
+            concentrations: this.fb.array([this.fb.control(1.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)]),
+            temperature: [25.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            extraParameter: [null],
+            allowPrecipitation: [false, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            nonidealityType: ['DEBYE', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+          });
+          this.pyequionStore.eqSystem$.subscribe(function (eqSys) {
+            // if (!eqSys)
+            //   return
+            var extraPrmtrCtrl = _this7.equilibriumCalcForm.get('extraParameter');
+
+            var closeVal = _this7.compoundsInputForm.get('closingEqType').value;
+
+            var concVals = _this7.equilibriumCalcForm.get('concentrations').value;
+
+            var compoundsVals = _this7.compoundsInput.value;
+            if (mapCloseEquationInverse[closeVal] == 'OPEN') extraPrmtrCtrl.setValue(pCO2_ref);else if (mapCloseEquationInverse[closeVal] == 'PH') extraPrmtrCtrl.setValue(7.0);else if (mapCloseEquationInverse[closeVal] == 'CARBON_TOTAL') {
+              var idxCarbon = concVals.map(function (v, i) {
+                var splt = compoundsVals[i].split(/(?=[A-Z])/);
+                var ck = splt.includes('C');
+                return ck ? i : undefined;
+              }).filter(function (x) {
+                return x !== undefined;
+              });
+
+              if (concVals) {
+                var sm = 0.0;
+
+                for (var index = 0; index < concVals.length; index++) {
+                  var conc = concVals[index];
+                  if (idxCarbon.includes(index)) sm += conc;
+                }
+
+                extraPrmtrCtrl.setValue(sm);
+              }
+
+              console.log('depois');
+            }
+          }); // this.pyequionStore.solutionResult$.subscribe((solRslt: any) => {
+          //   console.log('HIT AQUI');
+          //   if (!solRslt)
+          //     return
+          //   const idxH2O = solRslt.specie_names.findIndex(v => v === 'H2O')//[0]
+          //   // this.indexSpeciesShow = Array(solRslt.specie_names.length-1).fill(0).map((v,i) => {
+          //   //   return i === idxH2O ?
+          //   // })
+          //   solRslt.specie_names.splice(idxH2O,1)
+          //   solRslt.c_molal.splice(idxH2O,1)
+          //   // this.indexSpeciesShow = []
+          //   // // for (const iterator of solRslt.specie_names) {
+          //   //   for (let index = 0; index < solRslt.specie_names.length; index++) {
+          //   //     if ()
+          //   //   this.indexSpeciesShow.push()
+          //   //   }
+          // })
+        }
+      }, {
+        key: "handleMoreInputCompound",
+        value: function handleMoreInputCompound() {
+          this.compoundsInput.push(this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
+          this.concentrations.push(this.fb.control(1.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
+        }
+      }, {
+        key: "handleRemoveCompound",
+        value: function handleRemoveCompound(i) {
+          if (!this.compoundsInput.length) return;
+
+          if (this.compoundsInput.length == 1) {
+            this.compoundsInput.controls[i].setValue('');
+            return;
+          }
+
+          if (i + 1 === this.compoundsInput.length) {
+            this.compoundsInput.controls[i].setValue('');
+          }
+
+          this.compoundsInput.controls.splice(i, 1);
+          this.concentrations.controls.splice(i, 1); // this.compoundsInput.push(this.fb.control('', Validators.required));
+          // this.concentrations.push(this.fb.control(1.0, Validators.required));
+        }
+      }, {
+        key: "handleCreateEquilibrium",
+        value: function handleCreateEquilibrium() {
+          this.pyequionStore.emitValueEqSystem(null);
+          var initialFromFeed = null;
+          if (this.compoundsInputForm.value.initial_feed_mass_balance.trim() != '') initialFromFeed = this.compoundsInputForm.value.initial_feed_mass_balance.split(';');
+          var compInput = Object.assign({}, this.compoundsInputForm.value, {
+            initial_feed_mass_balance: initialFromFeed
+          });
+          this.pyequionStore.createEquilibrium(compInput);
+        }
+      }, {
+        key: "handleCalculateEquilibrium",
+        value: function handleCalculateEquilibrium() {
+          this.pyequionStore.emitValueSolutionResults(null);
+          this.pyequionStore.calculateEquilibrium(this.equilibriumCalcForm.value);
+          console.log('aow');
+        }
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {// this.eqSystemSubject.unsubscribe()
+        }
+      }, {
+        key: "compoundsInput",
+        get: function get() {
+          return this.compoundsInputForm.get('compounds');
+        }
+      }, {
+        key: "concentrations",
+        get: function get() {
+          return this.equilibriumCalcForm.get('concentrations');
+        }
+      }, {
+        key: "closingEqType",
+        get: function get() {
+          // console.log(this.compoundsInputForm.get('compounds').value)
+          return this.compoundsInputForm.get('closingEqType'); //as FormControl
+        }
+      }]);
+
+      return StepperComponent;
+    }();
+
+    StepperComponent.ctorParameters = function () {
+      return [{
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+      }, {
+        type: _pyequion_store_service__WEBPACK_IMPORTED_MODULE_4__["PyequionStoreService"]
+      }];
+    };
+
+    StepperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-stepper',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./stepper.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./stepper.component.scss */
+      "./src/app/stepper/stepper.component.scss")).default]
+    })], StepperComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/table-species/table-species-datasource.ts":
+  /*!***********************************************************!*\
+    !*** ./src/app/table-species/table-species-datasource.ts ***!
+    \***********************************************************/
+
+  /*! exports provided: TableSpeciesDataSource */
+
+  /***/
+  function srcAppTableSpeciesTableSpeciesDatasourceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TableSpeciesDataSource", function () {
+      return TableSpeciesDataSource;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/cdk/collections */
+    "./node_modules/@angular/cdk/esm2015/collections.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js"); // TODO: replace this with real data from your application
+
+
+    var EXAMPLE_DATA = [{
+      id: 1,
+      name: 'Hydrogen'
+    }, {
+      id: 2,
+      name: 'Helium'
+    }, {
+      id: 3,
+      name: 'Lithium'
+    }, {
+      id: 4,
+      name: 'Beryllium'
+    }, {
+      id: 5,
+      name: 'Boron'
+    }, {
+      id: 6,
+      name: 'Carbon'
+    }, {
+      id: 7,
+      name: 'Nitrogen'
+    }, {
+      id: 8,
+      name: 'Oxygen'
+    }, {
+      id: 9,
+      name: 'Fluorine'
+    }, {
+      id: 10,
+      name: 'Neon'
+    }, {
+      id: 11,
+      name: 'Sodium'
+    }, {
+      id: 12,
+      name: 'Magnesium'
+    }, {
+      id: 13,
+      name: 'Aluminum'
+    }, {
+      id: 14,
+      name: 'Silicon'
+    }, {
+      id: 15,
+      name: 'Phosphorus'
+    }, {
+      id: 16,
+      name: 'Sulfur'
+    }, {
+      id: 17,
+      name: 'Chlorine'
+    }, {
+      id: 18,
+      name: 'Argon'
+    }, {
+      id: 19,
+      name: 'Potassium'
+    }, {
+      id: 20,
+      name: 'Calcium'
+    }];
+    /**
+     * Data source for the TableSpecies view. This class should
+     * encapsulate all logic for fetching and manipulating the displayed data
+     * (including sorting, pagination, and filtering).
+     */
+
+    var TableSpeciesDataSource =
+    /*#__PURE__*/
+    function (_angular_cdk_collecti) {
+      _inherits(TableSpeciesDataSource, _angular_cdk_collecti);
+
+      function TableSpeciesDataSource() {
+        var _this8;
+
+        _classCallCheck(this, TableSpeciesDataSource);
+
+        _this8 = _possibleConstructorReturn(this, _getPrototypeOf(TableSpeciesDataSource).call(this));
+        _this8.data = EXAMPLE_DATA;
+        return _this8;
+      }
+      /**
+       * Connect this data source to the table. The table will only update when
+       * the returned stream emits new items.
+       * @returns A stream of the items to be rendered.
+       */
+
+
+      _createClass(TableSpeciesDataSource, [{
+        key: "connect",
+        value: function connect() {
+          var _this9 = this;
+
+          // Combine everything that affects the rendered data into one update
+          // stream for the data-table to consume.
+          var dataMutations = [Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.data), this.paginator.page, this.sort.sortChange];
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["merge"]).apply(void 0, dataMutations).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
+            return _this9.getPagedData(_this9.getSortedData(_toConsumableArray(_this9.data)));
+          }));
+        }
+        /**
+         *  Called when the table is being destroyed. Use this function, to clean up
+         * any open connections or free any held resources that were set up during connect.
+         */
+
+      }, {
+        key: "disconnect",
+        value: function disconnect() {}
+        /**
+         * Paginate the data (client-side). If you're using server-side pagination,
+         * this would be replaced by requesting the appropriate data from the server.
+         */
+
+      }, {
+        key: "getPagedData",
+        value: function getPagedData(data) {
+          var startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+          return data.splice(startIndex, this.paginator.pageSize);
+        }
+        /**
+         * Sort the data (client-side). If you're using server-side sorting,
+         * this would be replaced by requesting the appropriate data from the server.
+         */
+
+      }, {
+        key: "getSortedData",
+        value: function getSortedData(data) {
+          var _this10 = this;
+
+          if (!this.sort.active || this.sort.direction === '') {
+            return data;
+          }
+
+          return data.sort(function (a, b) {
+            var isAsc = _this10.sort.direction === 'asc';
+
+            switch (_this10.sort.active) {
+              case 'name':
+                return compare(a.name, b.name, isAsc);
+
+              case 'id':
+                return compare(+a.id, +b.id, isAsc);
+
+              default:
+                return 0;
+            }
+          });
+        }
+      }]);
+
+      return TableSpeciesDataSource;
+    }(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__["DataSource"]);
+    /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
+
+
+    function compare(a, b, isAsc) {
+      return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+    }
+    /***/
+
+  },
+
+  /***/
+  "./src/app/table-species/table-species.component.scss":
+  /*!************************************************************!*\
+    !*** ./src/app/table-species/table-species.component.scss ***!
+    \************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppTableSpeciesTableSpeciesComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".full-width-table {\n  width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvdGFibGUtc3BlY2llcy90YWJsZS1zcGVjaWVzLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC90YWJsZS1zcGVjaWVzL3RhYmxlLXNwZWNpZXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC90YWJsZS1zcGVjaWVzL3RhYmxlLXNwZWNpZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZnVsbC13aWR0aC10YWJsZSB7XG4gIHdpZHRoOiAxMDAlO1xufVxuIiwiLmZ1bGwtd2lkdGgtdGFibGUge1xuICB3aWR0aDogMTAwJTtcbn0iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/table-species/table-species.component.ts":
+  /*!**********************************************************!*\
+    !*** ./src/app/table-species/table-species.component.ts ***!
+    \**********************************************************/
+
+  /*! exports provided: TableSpeciesComponent */
+
+  /***/
+  function srcAppTableSpeciesTableSpeciesComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TableSpeciesComponent", function () {
+      return TableSpeciesComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/material/paginator */
+    "./node_modules/@angular/material/esm2015/paginator.js");
+    /* harmony import */
+
+
+    var _angular_material_sort__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/material/sort */
+    "./node_modules/@angular/material/esm2015/sort.js");
+    /* harmony import */
+
+
+    var _angular_material_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/material/table */
+    "./node_modules/@angular/material/esm2015/table.js");
+    /* harmony import */
+
+
+    var _table_species_datasource__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./table-species-datasource */
+    "./src/app/table-species/table-species-datasource.ts");
+
+    var TableSpeciesComponent =
+    /*#__PURE__*/
+    function () {
+      function TableSpeciesComponent() {
+        _classCallCheck(this, TableSpeciesComponent);
+
+        /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+        this.displayedColumns = ['id', 'name'];
+      }
+
+      _createClass(TableSpeciesComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.dataSource = new _table_species_datasource__WEBPACK_IMPORTED_MODULE_5__["TableSpeciesDataSource"]();
+        }
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
+          this.table.dataSource = this.dataSource;
+        }
+      }]);
+
+      return TableSpeciesComponent;
+    }();
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_paginator__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], {
+      static: false
+    })], TableSpeciesComponent.prototype, "paginator", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_sort__WEBPACK_IMPORTED_MODULE_3__["MatSort"], {
+      static: false
+    })], TableSpeciesComponent.prototype, "sort", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material_table__WEBPACK_IMPORTED_MODULE_4__["MatTable"], {
+      static: false
+    })], TableSpeciesComponent.prototype, "table", void 0);
+    TableSpeciesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-table-species',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./table-species.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/table-species/table-species.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./table-species.component.scss */
+      "./src/app/table-species/table-species.component.scss")).default]
+    })], TableSpeciesComponent);
+    /***/
+  },
+
+  /***/
+  "./src/data/compounds-input.json":
+  /*!***************************************!*\
+    !*** ./src/data/compounds-input.json ***!
+    \***************************************/
+
+  /*! exports provided: compounds, compounds_all, default */
+
+  /***/
+  function srcDataCompoundsInputJson(module) {
+    module.exports = JSON.parse("{\"compounds\":[\"CdCl2\",\"Cu(OH)2\",\"Fe(OH)2\",\"NaHSO4\",\"AlF3\",\"CaHPO4\",\"Fe(OH)3\",\"BaCO3\",\"ZnBr2\",\"SrCO3\",\"MgCO3\",\"CaSO4\",\"CaCO3\",\"KOH\",\"PbBr2\",\"PbSO4\",\"MnCl2\",\"ZnCl2\",\"Na2CO3\",\"H2Sg\",\"FeF3\",\"MgCl2\",\"CdBr2\",\"CdF2\",\"FeCl3\",\"Al2(SO4)3\",\"BaCl2\",\"MgSO4\",\"ZnSO4\",\"CaCl2\",\"CdCO3\",\"BaSO4\",\"CuCl2\",\"H3BO3\",\"SrSO4\",\"Cd(OH)2\",\"NH3\",\"MnCO3\",\"MgHPO4\",\"Fe(HS)2\",\"CO2(g)\",\"CuSO4\",\"CH4\",\"Pb(HS)2\",\"NaF\",\"FeCO3\",\"FeSO4\",\"Pb(OH)2\",\"H2O\",\"Al(OH)3\",\"NaHCO3\",\"N2\",\"H4SiO4\",\"CdOHCl\",\"CdSO4\",\"O2\",\"H2\",\"Cd(HS)2\",\"PbCO3\",\"Zn(OH)2\",\"PbCl2\",\"CuCO3\",\"KCl\",\"FeHPO4\",\"K2SO4\",\"H2S\",\"Zn(HS)2\",\"ZnCO3\",\"ZnOHCl\",\"H3PO4\",\"CO2\",\"MnSO4\",\"NaCl\",\"HF\",\"NaOH\",\"Mn(NO3)2\",\"PbF2\"],\"compounds_all\":[\"Pb(OH)4--\",\"CaOH+\",\"FeH2PO4++\",\"FeOH++\",\"CdCl2\",\"CdHS+\",\"Cu(OH)2\",\"Fe(OH)2\",\"Pb++\",\"Pb3(OH)4++\",\"NaHSO4\",\"Cu(CO3)2--\",\"PbF4--\",\"NH4+\",\"Fe(SO4)2-\",\"MnF+\",\"AlF3\",\"AlF++\",\"CuHCO3+\",\"CaHPO4\",\"Cd(OH)3-\",\"BF3OH-\",\"ZnF+\",\"CO3--\",\"H2PO4-\",\"Fe(OH)3\",\"BaCO3\",\"Fe3(OH)4+++++\",\"PbNO3+\",\"ZnBr2\",\"BF4-\",\"SiF6--\",\"SrCO3\",\"F-\",\"FeOH+\",\"Zn(SO4)2--\",\"HSO4-\",\"H3SiO4-\",\"Mg++\",\"NaHPO4-\",\"BaOH+\",\"MgCO3\",\"CdBr+\",\"CaSO4\",\"CaCO3\",\"FeHSO4+\",\"CdHCO3+\",\"H2BO3-\",\"KOH\",\"Ca++\",\"PbBr2\",\"FeSO4+\",\"PbSO4\",\"FeH2PO4+\",\"Cd(HS)3-\",\"FeF+\",\"Cd2OH+++\",\"FeHSO4++\",\"CuOH+\",\"PO4---\",\"CuCl2-\",\"H+\",\"MnCl2\",\"ZnCl2\",\"LiSO4-\",\"Na2CO3\",\"MnCl3-\",\"CuF+\",\"PbCl+\",\"NH4SO4-\",\"H2Sg\",\"CdNO3+\",\"FeHCO3+\",\"Pb(SO4)2--\",\"FeF3\",\"MgCl2\",\"HCO3-\",\"Mn(OH)3-\",\"FeCl+\",\"Al(OH)2+\",\"Zn(CO3)2--\",\"CdBr2\",\"FeCl++\",\"Sr++\",\"HPO4--\",\"CdF2\",\"AlOH++\",\"FeCl3\",\"Pb(CO3)2--\",\"Pb(OH)3-\",\"Pb(HS)3-\",\"Al2(SO4)3\",\"BaCl2\",\"MgSO4\",\"FeHPO4+\",\"Fe+++\",\"ZnSO4\",\"CaCl2\",\"Al(OH)4-\",\"CdCO3\",\"BF(OH)3-\",\"ZnCl3-\",\"H2SiO4--\",\"BaSO4\",\"MgOH+\",\"SO4--\",\"MnOH+\",\"AlHSO4++\",\"BaHCO3+\",\"CuCl3--\",\"Li+\",\"CuCl2\",\"BF2(OH)2-\",\"Cu2(OH)2++\",\"PbF+\",\"ZnHCO3+\",\"MgH2PO4+\",\"OH-\",\"Zn(HS)3-\",\"PbCl3-\",\"Fe(OH)3-\",\"AlSO4+\",\"HS-\",\"Zn(OH)3-\",\"SrHCO3+\",\"NaCO3-\",\"Cd++\",\"CdF+\",\"H3BO3\",\"MnHCO3+\",\"SrSO4\",\"K+\",\"PbHCO3+\",\"Cd(OH)2\",\"Zn++\",\"Fe(HS)3-\",\"Fe2(OH)2++++\",\"NH3\",\"KHPO4-\",\"MnCO3\",\"MgHPO4\",\"NO3-\",\"Fe(HS)2\",\"Al(SO4)2-\",\"Na+\",\"CO2(g)\",\"CuSO4\",\"FeF2+\",\"FeCl2+\",\"SrOH+\",\"CH4\",\"NaSO4-\",\"MgHCO3+\",\"MgPO4-\",\"MgF+\",\"Cu(HS)3-\",\"Pb(HS)2\",\"Cl-\",\"PbCl4--\",\"NaF\",\"Cd(SO4)2--\",\"Cu(OH)4--\",\"CdOH+\",\"FeCO3\",\"HF2-\",\"Mn+++\",\"FeSO4\",\"Pb(OH)2\",\"H2O\",\"CaPO4-\",\"Al(OH)3\",\"NaHCO3\",\"AlF2+\",\"N2\",\"H4SiO4\",\"CaH2PO4+\",\"CdOHCl\",\"CuCl3-\",\"CdCl+\",\"CdSO4\",\"Cd(HS)4--\",\"O2\",\"H2\",\"Fe(OH)4-\",\"PbOH+\",\"HSg-\",\"Cd(HS)2\",\"KSO4-\",\"Fe++\",\"Mn++\",\"Fe(OH)2+\",\"PbCO3\",\"Zn(OH)2\",\"PbCl2\",\"MnCl+\",\"ZnCl4--\",\"CaHSO4+\",\"Cu++\",\"ZnBr+\",\"CuCO3\",\"PbF3-\",\"CdCl3-\",\"KCl\",\"FeHPO4\",\"AlF4-\",\"Pb2OH+++\",\"K2SO4\",\"FeF++\",\"Cu(OH)3-\",\"H2S\",\"ZnOH+\",\"Zn(HS)2\",\"Cd(CO3)2--\",\"ZnCO3\",\"Cd(OH)4--\",\"Zn(OH)4--\",\"ZnOHCl\",\"H3PO4\",\"CO2\",\"Br-\",\"MnSO4\",\"CuCl4--\",\"NaCl\",\"Cu+\",\"HF\",\"NaOH\",\"ZnCl+\",\"Mn(NO3)2\",\"S--\",\"NO2-\",\"PbF2\",\"Ba++\",\"CuCl+\",\"PbBr+\",\"CaHCO3+\",\"Al+++\"]}");
+    /***/
+  },
+
+  /***/
+  "./src/environments/environment.ts":
+  /*!*****************************************!*\
+    !*** ./src/environments/environment.ts ***!
+    \*****************************************/
+
+  /*! exports provided: environment */
+
+  /***/
+  function srcEnvironmentsEnvironmentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "environment", function () {
+      return environment;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js"); // This file can be replaced during build by using the `fileReplacements` array.
+    // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+    // The list of file replacements can be found in `angular.json`.
+
+
+    var environment = {
+      production: false,
+      // urlBackend: 'http://localhost:5000/api'
+      urlBackend: 'https://us-central1-datalab-260621.cloudfunctions.net/function-pyequion'
+    };
+    /*
+     * For easier debugging in development mode, you can import the following file
+     * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+     *
+     * This import should be commented out in production mode because it will have a negative impact
+     * on performance if an error is thrown.
+     */
+    // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+    /***/
+  },
+
+  /***/
+  "./src/main.ts":
+  /*!*********************!*\
+    !*** ./src/main.ts ***!
+    \*********************/
+
+  /*! no exports provided */
+
+  /***/
+  function srcMainTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! hammerjs */
+    "./node_modules/hammerjs/hammer.js");
+    /* harmony import */
+
+
+    var hammerjs__WEBPACK_IMPORTED_MODULE_1___default =
+    /*#__PURE__*/
+    __webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/platform-browser-dynamic */
+    "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+    /* harmony import */
+
+
+    var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./app/app.module */
+    "./src/app/app.module.ts");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./environments/environment */
+    "./src/environments/environment.ts");
+
+    if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+      Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
+    }
+
+    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"]).catch(function (err) {
+      return console.error(err);
+    });
+    /***/
+  },
+
+  /***/
+  0:
+  /*!***************************!*\
+    !*** multi ./src/main.ts ***!
+    \***************************/
+
+  /*! no static exports found */
+
+  /***/
+  function _(module, exports, __webpack_require__) {
+    module.exports = __webpack_require__(
+    /*! /home/caio/Projects/CarbonateDeposition/Repositories/pyequion-viewer/src/main.ts */
+    "./src/main.ts");
+    /***/
+  }
+}, [[0, "runtime", "vendor"]]]); //# sourceMappingURL=main-es2015.js.map
+//# sourceMappingURL=main-es5.js.map
