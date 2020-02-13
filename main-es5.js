@@ -69,7 +69,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Toolbar -->\n<div class=\"toolbar\" role=\"banner\">\n  <img width=\"40\" alt=\"Angular Logo\" src=\"./assets/pyequion_logo.png\" />\n  <h1 style=\"margin: 0; font-size: 1.5rem;\">PyEquIon Speciation</h1>\n  <div class=\"spacer\"></div>\n  <div style=\"background-color: white; height: 40.33px;\">\n    <img style=\"margin: 0;\" width=\"80\" alt=\"Nidf Logo\" src=\"./assets/nidflogo-300x150.png\" />\n  </div>\n  <img width=\"125\" alt=\"Atoms Logo\" src=\"./assets/atoms_logo.png\" />\n</div>\n\n<div class=\"content\" role=\"main\">\n\n  <!-- <app-table-species></app-table-species> -->\n  <!-- <div style=\";\"> -->\n  <app-stepper></app-stepper>\n  <!-- </div> -->\n\n  <!-- <div [appMath]=\"mathLatex\"></div> -->\n\n  <!-- <div [appMath]>\n    $E = mc^2$ -->\n  <!-- </div> -->\n\n  <!-- <div [appMath]>\n    {{'$\\\\ce{CaCO3}$'}}\n  </div> -->\n\n  <!-- <div mathjax>mathjax typesetting\n    $$\n    x = 1\n    $$\n\n    \\( y = 2 \\)\n    </div> -->\n\n</div>\n\n<router-outlet></router-outlet>\n\n<!-- Footer -->\n<footer>\n  <div>\n      Author: Caio Curitiba Marcellos, Researcher at ATOMS/UFRJ/BR - Any bug or suggestion? Contact me at: caiocuritiba@gmail.com.\n  </div>\n</footer>\n";
+    __webpack_exports__["default"] = "<!-- Toolbar -->\n<div id=\"page-container\">\n  <div class=\"toolbar\" role=\"banner\">\n    <img width=\"40\" alt=\"Angular Logo\" src=\"./assets/pyequion_logo.png\" />\n    <h1 style=\"margin: 0; font-size: 1.5rem;\">PyEquIon Speciation</h1>\n    <div class=\"spacer\"></div>\n    <div style=\"background-color: white; height: 40.33px;\">\n      <img style=\"margin: 0;\" width=\"80\" alt=\"Nidf Logo\" src=\"./assets/nidflogo-300x150.png\" />\n    </div>\n    <img width=\"125\" alt=\"Atoms Logo\" src=\"./assets/atoms_logo.png\" />\n  </div>\n\n  <div class=\"content\" role=\"main\">\n\n    <div style=\"margin: 0 15%;\" *ngFor=\"let i of numbersCases\">\n      <app-stepper></app-stepper>\n    </div>\n\n    <br>\n    <div style=\"display: flex; justify-content: flex-end;\">\n      <button style=\"margin-right: 5px;\" mat-stroked-button color=\"primary\" (click)=\"handleAddMoreCases()\">\n        Add Case\n      </button>\n    </div>\n  </div>\n\n  <!-- <router-outlet></router-outlet> -->\n\n\n  <!-- Footer -->\n  <footer>\n    <div>\n      Author: Caio Curitiba Marcellos, Researcher at ATOMS/UFRJ/BR - Any bug or suggestion? Contact me at:\n      caiocuritiba@gmail.com.\n    </div>\n  </footer>\n</div>\n";
     /***/
   },
 
@@ -94,6 +94,66 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/equilibrium-calculation/equilibrium-calculation.component.html":
+  /*!**********************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/equilibrium-calculation/equilibrium-calculation.component.html ***!
+    \**********************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppEquilibriumCalculationEquilibriumCalculationComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div style=\"display: flex; justify-content: center; flex-direction: column;\">\n  <div style=\"display: flex; justify-content: flex-start; flex-grow: 1;\">\n    <div style=\"flex-basis: 50%;\">\n      <div *ngIf=\"!pyequionStore.isLoading; else loading\">\n        <div [appMath]=\"pyequionStore.reactionsLatexAsConcatenatedString$ | async\"></div>\n        <h5>Possible Solid Reactions:</h5>\n        <!-- <div *ngFor=\"let reaction of pyequionStore.solidReactionsLatex$ | async\"> -->\n            <!-- <div [appMath]=\"{latex: '$' + reaction + '$'}\"></div>  -->\n            <div [appMath]=\"pyequionStore.solidReactionsLatexAsConcatenatedString$ | async\"></div>\n        <!-- </div> -->\n        <br>\n      </div>\n    </div>\n    <form [formGroup]=\"equilibriumCalcForm\" style=\"flex-basis: 50%;\">\n      <h4 style=\"margin-bottom: 3px;\">Concentrations (mM):</h4>\n      <div formArrayName=\"concentrations\">\n        <div *ngFor=\"let conc of equilibriumCalcForm.get('concentrations').controls; let i=index\">\n          <mat-form-field>\n            <input matInput [formControl]=\"conc\" [placeholder]=\"compoundsInputForm.get('compounds').controls[i].value\" type=\"number\">\n          </mat-form-field>\n        </div>\n      </div>\n      <div>\n        <mat-form-field>\n          <input matInput formControlName=\"temperature\" placeholder=\"Temperature [&#176;C]\" type=\"number\">\n        </mat-form-field>\n      </div>\n      <div *ngIf=\"compoundsInputForm.get('closingEqType').value !== mapCloseEquationEnumTmplt['NONE']\">\n        <mat-form-field>\n          <input matInput formControlName=\"extraParameter\"\n            [placeholder]=\"mapCloseEquationLabel[compoundsInputForm.get('closingEqType').value]\" type=\"number\">\n        </mat-form-field>\n      </div>\n      <mat-slide-toggle formControlName=\"allowPrecipitation\">Allow Precipitation</mat-slide-toggle>\n      <div style=\"padding-top: 20px;\">\n        <mat-form-field>\n          <mat-label>Nonideality Model</mat-label>\n          <mat-select formControlName=\"nonidealityType\">\n            <mat-option *ngFor=\"let nonIdeality of nonIdealitiesTypes\" [value]=\"nonIdeality.value\">\n              {{nonIdeality.label}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n  <br>\n  <div>\n    <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n    <button mat-raised-button matStepperNext\n      [disabled]=\"(!pyequionStore.eqSystem$) && (equilibriumCalcForm.invalid)\"\n      (click)=\"handleCalculateEquilibrium()\">\n      Calculate and Advance\n    </button>\n  </div>\n</div>\n\n<!-- Strang way to include this spinner... -->\n<div style=\"text-align: center;\">\n  <ng-template #loading>\n    <div style=\"text-align: center;\">\n      <mat-spinner></mat-spinner>\n    </div>\n  </ng-template>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/solution-results-step/solution-results-step.component.html":
+  /*!******************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/solution-results-step/solution-results-step.component.html ***!
+    \******************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSolutionResultsStepSolutionResultsStepComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div *ngIf=\"((!pyequionStore.isLoading)); else loading\">\n  <div *ngIf=\"pyequionStore.solutionResult$ | async as solutionResult\">\n\n    <div style=\"display: flex; justify-content: space-between;\">\n      <p><b>pH:</b> {{solutionResult.pH | number: '1.3-3'}}</p>\n      <p><b>I:</b> {{solutionResult.I*1e3 | number: '1.3-3'}} mM</p>\n      <p><b>SC:</b> {{solutionResult.sc*1e6 | number: '1.3-3'}}\n        <span appMath>$\\mu$</span>\n        S/cm\n      </p>\n      <p><b>DIC:</b> {{solutionResult.DIC*1e3 | number: '1.3-3'}} mM</p>\n    </div>\n    <div style=\"display: flex; flex-direction: row;\">\n      <div style=\"flex-basis: 50%;\">\n        <b>Species:</b>\n        <ul>\n          <li *ngFor=\"let species of speciesDisplay$ | async\">\n            <b>{{species.name}}:</b> {{species.conc*1e3 | number: '1.3-3'}} mM\n          </li>\n        </ul>\n      </div>\n      <div style=\"flex-basis: 50%;\">\n        <div>\n          <b>Saturation Index:</b>\n          <ul>\n            <li *ngFor=\"let solidName of objectKeys(solutionResult.saturation_index)\">\n              {{solidName}}: {{solutionResult.saturation_index[solidName] | number: '1.3-3'}}\n            </li>\n          </ul>\n        </div>\n        <div *ngIf=\"precipitatedDisplay$ | async as precipitatedDisplay\">\n          <b>Precipitation Concentration:</b>\n          <ul>\n            <li *ngFor=\"let solidName of precipitatedDisplay\">\n              <span *ngIf=\"solutionResult.preciptation_conc[solidName]\">\n                {{solidName}}: {{solutionResult.preciptation_conc[solidName]*1e3 | number: '1.3-3'}} mM\n              </span>\n            </li>\n          </ul>\n        </div>\n        <div>\n          <b>Ionic Activity Product and log(Ksp):</b>\n          <ul>\n            <li *ngFor=\"let solidName of objectKeys(solutionResult.ionic_activity_prod)\">\n              <span *ngIf=\"solutionResult.ionic_activity_prod[solidName]\">\n                {{solidName}}: {{solutionResult.ionic_activity_prod[solidName].toPrecision(4) }};\n                Ksp = {{solutionResult.log_K_solubility[solidName] | number: '1.3-3'}}\n              </span>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Strang way to include this spinner... -->\n<div style=\"text-align: center;\">\n  <ng-template #loading>\n    <div style=\"text-align: center;\">\n      <mat-spinner></mat-spinner>\n    </div>\n  </ng-template>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/species-input-step/species-input-step.component.html":
+  /*!************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/species-input-step/species-input-step.component.html ***!
+    \************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSpeciesInputStepSpeciesInputStepComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form [formGroup]=\"compoundsInputForm\">\n  <div style=\"display: flex;\">\n    <div formArrayName=\"compounds\" style=\"flex-basis: 50%;\">\n      <div *ngFor=\"let compound of compoundsInput.controls; let i=index\" class=\"compound-input\">\n        <app-autocomplete-compound [control]=\"compound\"></app-autocomplete-compound>\n        <button *ngIf=\"(i+1) === compoundsInput.length\" mat-icon-button (click)=\"handleMoreInputCompound()\">\n          <mat-icon>add_circle</mat-icon>\n        </button>\n        <button mat-icon-button (click)=\"handleRemoveCompound(i)\">\n          <mat-icon>remove_circle</mat-icon>\n        </button>\n      </div>\n    </div>\n    <div style=\"flex-basis: 50%; display: flex; flex-direction: column;\">\n      <mat-form-field>\n        <mat-label>Closing Equation Type</mat-label>\n        <mat-select formControlName=\"closingEqType\">\n          <mat-option *ngFor=\"let closingType of closingEquationTypes\" [value]=\"closingType.value\">\n            {{closingType.label}}\n          </mat-option>\n        </mat-select>\n      </mat-form-field>\n      <mat-form-field>\n        <input matInput formControlName=\"initial_feed_mass_balance\" placeholder=\"Species direct from Feed\"\n          type=\"text\">\n      </mat-form-field>\n    </div>\n  </div>\n  <div>\n    <button mat-raised-button matStepperNext [disabled]=\"!compoundsInputForm.valid\"\n      (click)=\"onClickCreateEquilibrium.emit($event)\">\n      Create System ></button>\n  </div>\n</form>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html":
   /*!**************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html ***!
@@ -109,7 +169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- <button mat-raised-button (click)=\"isLinear = !isLinear\" id=\"toggle-linear\">\n  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}\n</button> -->\n<!-- <div style=\"max-width: 900px; text-align: center;\"> -->\n  <mat-horizontal-stepper [linear]=\"isLinear\" #stepper>\n    <mat-step [stepControl]=\"compoundsInputForm\">\n      <ng-template matStepLabel>Chemical Species</ng-template>\n      <form [formGroup]=\"compoundsInputForm\">\n        <div style=\"display: flex;\">\n          <div formArrayName=\"compounds\" style=\"flex-basis: 50%;\">\n            <div *ngFor=\"let compound of compoundsInput.controls; let i=index\" class=\"compound-input\">\n              <app-autocomplete-compound [control]=\"compound\"></app-autocomplete-compound>\n              <button *ngIf=\"(i+1) === compoundsInput.length\" mat-icon-button (click)=\"handleMoreInputCompound()\">\n                <mat-icon>add_circle</mat-icon>\n              </button>\n              <button mat-icon-button (click)=\"handleRemoveCompound(i)\">\n                <mat-icon>remove_circle</mat-icon>\n              </button>\n            </div>\n          </div>\n          <div style=\"flex-basis: 50%; display: flex; flex-direction: column;\">\n            <mat-form-field>\n              <mat-label>Closing Equation Type</mat-label>\n              <mat-select formControlName=\"closingEqType\">\n                <mat-option *ngFor=\"let closingType of closingEquationTypes\" [value]=\"closingType.value\">\n                  {{closingType.label}}\n                </mat-option>\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field>\n              <input matInput formControlName=\"initial_feed_mass_balance\" placeholder=\"Species direct from Feed\"\n                type=\"text\">\n            </mat-form-field>\n          </div>\n        </div>\n        <div>\n          <button mat-raised-button matStepperNext [disabled]=\"!compoundsInputForm.valid\"\n            (click)=\"handleCreateEquilibrium()\">\n            Create System ></button>\n        </div>\n      </form>\n    </mat-step>\n    <mat-step [stepControl]=\"secondFormGroup\">\n      <ng-template matStepLabel>Equilibrium Calculation</ng-template>\n      <div style=\"display: flex; justify-content: center; flex-direction: column;\">\n        <div style=\"display: flex; justify-content: flex-start; flex-grow: 1;\">\n          <div style=\"flex-basis: 50%;\">\n            <!-- <div *ngIf=\"pyequionStore.reactions$ | async as reactions; else loading\"> -->\n            <div *ngIf=\"!pyequionStore.isLoading; else loading\">\n              <!-- <div *ngFor=\"let reaction of reactions$ | async\"> -->\n              <!-- <div *ngFor=\"let reaction of pyequionStore.reactionsLatex$ | async\"> -->\n              <!-- <div *ngIf=\"reactionsDisplay$ | async as reactionsDisplay\"> -->\n                <!-- <div [mathjax]=\"[reactionsDisplay]\">\n                  \\( {{ '{}' }} \\)\n                </div> -->\n                <!-- <div [appMath]=\"'\\\\ce{ {H2O^{}} <=> {OH^{-}} +{H^{+}}} '\"></div> -->\n                <!-- <div [appMath]=\"'a_2'\"></div> -->\n                <!-- <div [appMath]=\"{latex: '$\\\\ce{CaCO3}$ \\\\\\\\'}\"> -->\n                  <!-- <div [appMath]=\"{latex: '$\\ce{ {H2O^{}} <=> {OH^{-}} +{H^{+}}} \\\\\\ce{ {Cd^{2+}} +2.0{Cl^{-}} <=> {CdCl2^{}}} $'}\"> -->\n                  <!-- </div> -->\n                <!-- <br> -->\n              <!-- </div> -->\n              <div *ngFor=\"let reaction of pyequionStore.reactionsLatex$ | async\">\n                  <div [appMath]=\"{latex: '$' + reaction + '$'}\"></div>\n              </div>\n              <!-- <div *ngIf=\"solidReactionsDisplay$ | async as solidReactionsDisplay\">\n                <h5>Possible Solid Reactions:</h5>\n                <div [mathjax]=\"[solidReactionsDisplay]\">\n                  \\( {{ '{}' }} \\)\n                </div>\n                <br>\n              </div> -->\n              <h5>Possible Solid Reactions:</h5>\n              <div *ngFor=\"let reaction of pyequionStore.solidReactionsLatex$ | async\">\n                  <div [appMath]=\"{latex: '$' + reaction + '$'}\"></div>\n              </div>\n              <br>\n            </div>\n          </div>\n          <form [formGroup]=\"equilibriumCalcForm\" style=\"flex-basis: 50%;\">\n            <h4 style=\"margin-bottom: 3px;\">Concentrations (mM):</h4>\n            <div formArrayName=\"concentrations\">\n              <div *ngFor=\"let conc of concentrations.controls; let i=index\">\n                <mat-form-field>\n                  <input matInput [formControl]=\"conc\" [placeholder]=\"compoundsInput.controls[i].value\" type=\"number\">\n                </mat-form-field>\n              </div>\n            </div>\n            <div>\n              <mat-form-field>\n                <input matInput formControlName=\"temperature\" placeholder=\"Temperature [&#176;C]\" type=\"number\">\n              </mat-form-field>\n            </div>\n            <div *ngIf=\"compoundsInputForm.get('closingEqType').value !== NONE\">\n              <mat-form-field>\n                <input matInput formControlName=\"extraParameter\"\n                  [placeholder]=\"mapCloseEquationLabel[compoundsInputForm.get('closingEqType').value]\" type=\"number\">\n              </mat-form-field>\n            </div>\n            <mat-slide-toggle formControlName=\"allowPrecipitation\">Allow Precipitation</mat-slide-toggle>\n            <div style=\"padding-top: 20px;\">\n              <mat-form-field>\n                <mat-label>Nonideality Model</mat-label>\n                <mat-select formControlName=\"nonidealityType\">\n                  <mat-option *ngFor=\"let nonIdeality of nonIdealitiesTypes\" [value]=\"nonIdeality.value\">\n                    {{nonIdeality.label}}\n                  </mat-option>\n                </mat-select>\n              </mat-form-field>\n            </div>\n          </form>\n        </div>\n        <div>\n          <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n          <button mat-raised-button matStepperNext\n            [disabled]=\"(!pyequionStore.eqSystem$) && (equilibriumCalcForm.invalid)\"\n            (click)=\"handleCalculateEquilibrium()\">\n            Calculate and Advance\n          </button>\n        </div>\n      </div>\n    </mat-step>\n    <mat-step>\n      <ng-template matStepLabel>Solution Results</ng-template>\n      <!-- <div *ngIf=\"pyequionStore.solutionResult$ | async as solutionResult; else loading\"> -->\n      <div *ngIf=\"((!pyequionStore.isLoading)); else loading\">\n        <div *ngIf=\"pyequionStore.solutionResult$ | async as solutionResult\">\n\n          <!-- <div *ngFor=\"let reaction of solutionResult \">\n            {{solutionResult}}\n            <br>\n        </div> -->\n          <div style=\"display: flex; justify-content: space-between;\">\n            <p><b>pH:</b> {{solutionResult.pH | number: '1.3-3'}}</p>\n            <p><b>I:</b> {{solutionResult.I*1e3 | number: '1.3-3'}} mM</p>\n            <p><b>SC:</b> {{solutionResult.sc*1e6 | number: '1.3-3'}}\n              <!-- <span mathjax>\\(\\mu\\)</span> -->\n              <span appMath>$\\mu$</span>\n              S/cm\n            </p>\n            <p><b>DIC:</b> {{solutionResult.DIC*1e3 | number: '1.3-3'}} mM</p>\n            <!-- <mathjax [content]=\"''\"></mathjax> -->\n          </div>\n          <!-- <div>\n          <b>Solid candidates:</b>\n          <ul>\n            <li *ngFor=\"let solidName of solutionResult.solid_names\">\n              {{solidName}}\n            </li>\n          </ul>\n        </div> -->\n          <div style=\"display: flex; flex-direction: row;\">\n            <div style=\"flex-basis: 50%;\">\n              <b>Species:</b>\n              <ul>\n                <li *ngFor=\"let species of speciesDisplay$ | async\">\n                  <b>{{species.name}}:</b> {{species.conc*1e3 | number: '1.3-3'}} mM\n                </li>\n              </ul>\n            </div>\n            <div style=\"flex-basis: 50%;\">\n              <div>\n                <b>Saturation Index:</b>\n                <ul>\n                  <li *ngFor=\"let solidName of objectKeys(solutionResult.saturation_index)\">\n                    <!-- <span *ngIf=\"solutionResult.saturation_index[solidName]\"> -->\n                    {{solidName}}: {{solutionResult.saturation_index[solidName] | number: '1.3-3'}}\n                    <!-- </span> -->\n                  </li>\n                </ul>\n              </div>\n              <div *ngIf=\"precipitatedDisplay$ | async as precipitatedDisplay\">\n                <b>Precipitation Concentration:</b>\n                <ul>\n                  <!-- <li *ngFor=\"let solidName of objectKeys(solutionResult.preciptation_conc)\">\n                    <span *ngIf=\"solutionResult.preciptation_conc[solidName]\">\n                      {{solidName}}: {{solutionResult.preciptation_conc[solidName] | number: '1.3-3'}}\n                    </span>\n                  </li> -->\n                  <li *ngFor=\"let solidName of precipitatedDisplay\">\n                    <span *ngIf=\"solutionResult.preciptation_conc[solidName]\">\n                      {{solidName}}: {{solutionResult.preciptation_conc[solidName]*1e3 | number: '1.3-3'}} mM\n                    </span>\n                  </li>\n                </ul>\n              </div>\n              <div>\n                <b>Ionic Activity Product and log(Ksp):</b>\n                <ul>\n                  <li *ngFor=\"let solidName of objectKeys(solutionResult.ionic_activity_prod)\">\n                    <span *ngIf=\"solutionResult.ionic_activity_prod[solidName]\">\n                      {{solidName}}: {{solutionResult.ionic_activity_prod[solidName].toPrecision(4) }};\n                      Ksp = {{solutionResult.log_K_solubility[solidName] | number: '1.3-3'}}\n                    </span>\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div>\n        <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n        <button mat-raised-button (click)=\"stepper.reset()\">Reset</button>\n      </div>\n    </mat-step>\n  </mat-horizontal-stepper>\n\n  <div style=\"text-align: center;\">\n    <ng-template #loading>\n      <div style=\"text-align: center;\">\n        <mat-spinner></mat-spinner>\n      </div>\n    </ng-template>\n  </div>\n<!-- </div> -->\n\n\n\n<!--\n<h3>Form Input Compounds</h3>\n<p>\n  Form Status: {{ compoundsInputForm.status }}\n</p>\n\n<h3>Equlibrium Calculation Form</h3>\n<p>\n  Form Status: {{ equilibriumCalcForm.status }}\n</p>\n-->\n\n<!-- <p>\n  {{equilibriumCalcForm.value | json}}\n</p> -->\n\n<!-- <p>\n  {{compoundsInputForm.value | json}}\n</p> -->\n\n\n";
+    __webpack_exports__["default"] = "<mat-horizontal-stepper [linear]=\"isLinear\" #stepper>\n  <mat-step [stepControl]=\"compoundsInputForm\">\n    <ng-template matStepLabel>Chemical Species</ng-template>\n    <app-species-input-step\n      [compoundsInputForm]=\"compoundsInputForm\"\n      [equilibriumCalcForm]=\"equilibriumCalcForm\"\n      (onClickCreateEquilibrium)=\"handleCreateEquilibrium()\"\n    >\n    </app-species-input-step>\n  </mat-step>\n  <mat-step [stepControl]=\"secondFormGroup\">\n    <ng-template matStepLabel>Equilibrium Calculation</ng-template>\n    <app-equilibrium-calculation\n      [compoundsInputForm]=\"compoundsInputForm\"\n      [equilibriumCalcForm]=\"equilibriumCalcForm\"\n    >\n    </app-equilibrium-calculation>\n  </mat-step>\n  <mat-step>\n    <ng-template matStepLabel>Solution Results</ng-template>\n    <app-solution-results-step>\n    </app-solution-results-step>\n    <div>\n      <button style=\"margin-right: 5px;\" mat-raised-button matStepperPrevious>Back</button>\n      <button mat-raised-button (click)=\"stepper.reset()\">Reset</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n\n<div style=\"text-align: center;\">\n  <ng-template #loading>\n    <div style=\"text-align: center;\">\n      <mat-spinner></mat-spinner>\n    </div>\n  </ng-template>\n</div>\n<!-- </div> -->\n\n\n\n<!--\n<h3>Form Input Compounds</h3>\n<p>\n  Form Status: {{ compoundsInputForm.status }}\n</p>\n\n<h3>Equlibrium Calculation Form</h3>\n<p>\n  Form Status: {{ equilibriumCalcForm.status }}\n</p>\n-->\n\n<!-- <p>\n  {{equilibriumCalcForm.value | json}}\n</p> -->\n\n<!-- <p>\n  {{compoundsInputForm.value | json}}\n</p> -->\n";
     /***/
   },
 
@@ -758,7 +818,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ":host {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 14px;\n  color: #333;\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin: 8px 0;\n}\n\np {\n  margin: 0;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.toolbar {\n  height: 60px;\n  padding-left: 10px;\n  display: flex;\n  align-items: center;\n  background-color: #1976d2;\n  color: white;\n}\n\n.toolbar img {\n  margin: 0 16px;\n}\n\n.content {\n  margin: 32px auto;\n  padding: 0 32px;\n  max-width: 960px;\n}\n\na,\na:visited,\na:hover {\n  color: #1976d2;\n  text-decoration: none;\n}\n\na:hover {\n  color: #125699;\n}\n\nfooter {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 2.5rem;\n  background-color: #1976d2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #1976d2;\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSwwSkFBQTtFQUNBLGVBQUE7RUFDQSxXQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQ0FBQTtFQUNBLGtDQUFBO0FDQUY7O0FER0E7Ozs7OztFQU1FLGFBQUE7QUNBRjs7QURHQTtFQUNFLFNBQUE7QUNBRjs7QURHQTtFQUNFLE9BQUE7QUNBRjs7QURHQTtFQUNFLFlBQUE7RUFFQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQ0RGOztBREtBO0VBQ0UsY0FBQTtBQ0ZGOztBREtBO0VBRUUsaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUNIRjs7QURRQTs7O0VBR0UsY0FBQTtFQUNBLHFCQUFBO0FDTEY7O0FEUUE7RUFDRSxjQUFBO0FDTEY7O0FEUUE7RUFDRSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7QUNMRiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuOmhvc3Qge1xuICBmb250LWZhbWlseTogLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCBcIlNlZ29lIFVJXCIsIFJvYm90bywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZiwgXCJBcHBsZSBDb2xvciBFbW9qaVwiLCBcIlNlZ29lIFVJIEVtb2ppXCIsIFwiU2Vnb2UgVUkgU3ltYm9sXCI7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICMzMzM7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xufVxuXG5oMSxcbmgyLFxuaDMsXG5oNCxcbmg1LFxuaDYge1xuICBtYXJnaW46IDhweCAwO1xufVxuXG5wIHtcbiAgbWFyZ2luOiAwO1xufVxuXG4uc3BhY2VyIHtcbiAgZmxleDogMTtcbn1cblxuLnRvb2xiYXIge1xuICBoZWlnaHQ6IDYwcHg7XG4gIC8vIG1hcmdpbjogLThweDtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTk3NmQyO1xuICBjb2xvcjogd2hpdGU7XG4gIC8vIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbi50b29sYmFyIGltZyB7XG4gIG1hcmdpbjogMCAxNnB4O1xufVxuXG4uY29udGVudCB7XG4gIC8vIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbjogMzJweCBhdXRvO1xuICBwYWRkaW5nOiAwIDMycHg7XG4gIG1heC13aWR0aDogOTYwcHg7XG4gIC8vIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIC8vIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbmEsXG5hOnZpc2l0ZWQsXG5hOmhvdmVyIHtcbiAgY29sb3I6ICMxOTc2ZDI7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuYTpob3ZlciB7XG4gIGNvbG9yOiAjMTI1Njk5O1xufVxuXG5mb290ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJvdHRvbTogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMi41cmVtO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTk3NmQyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbiAgY29sb3I6IHdoaXRlO1xufVxuIiwiOmhvc3Qge1xuICBmb250LWZhbWlseTogLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCBcIlNlZ29lIFVJXCIsIFJvYm90bywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZiwgXCJBcHBsZSBDb2xvciBFbW9qaVwiLCBcIlNlZ29lIFVJIEVtb2ppXCIsIFwiU2Vnb2UgVUkgU3ltYm9sXCI7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgY29sb3I6ICMzMzM7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6IGFudGlhbGlhc2VkO1xuICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xufVxuXG5oMSxcbmgyLFxuaDMsXG5oNCxcbmg1LFxuaDYge1xuICBtYXJnaW46IDhweCAwO1xufVxuXG5wIHtcbiAgbWFyZ2luOiAwO1xufVxuXG4uc3BhY2VyIHtcbiAgZmxleDogMTtcbn1cblxuLnRvb2xiYXIge1xuICBoZWlnaHQ6IDYwcHg7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4udG9vbGJhciBpbWcge1xuICBtYXJnaW46IDAgMTZweDtcbn1cblxuLmNvbnRlbnQge1xuICBtYXJnaW46IDMycHggYXV0bztcbiAgcGFkZGluZzogMCAzMnB4O1xuICBtYXgtd2lkdGg6IDk2MHB4O1xufVxuXG5hLFxuYTp2aXNpdGVkLFxuYTpob3ZlciB7XG4gIGNvbG9yOiAjMTk3NmQyO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG5cbmE6aG92ZXIge1xuICBjb2xvcjogIzEyNTY5OTtcbn1cblxuZm9vdGVyIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDIuNXJlbTtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGNvbG9yOiB3aGl0ZTtcbn0iXX0= */";
+    __webpack_exports__["default"] = ":host {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  font-size: 14px;\n  color: #333;\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  margin: 8px 0;\n}\n\np {\n  margin: 0;\n}\n\n.spacer {\n  flex: 1;\n}\n\n.toolbar {\n  height: 60px;\n  padding-left: 10px;\n  display: flex;\n  align-items: center;\n  background-color: #1976d2;\n  color: white;\n  padding: 10px;\n}\n\n.toolbar img {\n  margin: 0 16px;\n}\n\n.content {\n  padding: 0 32px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\na,\na:visited,\na:hover {\n  color: #1976d2;\n  text-decoration: none;\n}\n\na:hover {\n  color: #125699;\n}\n\nfooter {\n  margin-top: auto;\n  height: 2.5rem;\n  width: 100%;\n  padding: 10px;\n  background-color: #1976d2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: #1976d2;\n  color: white;\n}\n\n#page-container {\n  min-height: 100%;\n  height: 100vh;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDRSwwSkFBQTtFQUNBLGVBQUE7RUFDQSxXQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQ0FBQTtFQUNBLGtDQUFBO0FDQUY7O0FER0E7Ozs7OztFQU1FLGFBQUE7QUNBRjs7QURHQTtFQUNFLFNBQUE7QUNBRjs7QURHQTtFQUNFLE9BQUE7QUNBRjs7QURHQTtFQUNFLFlBQUE7RUFFQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7QUNERjs7QURLQTtFQUNFLGNBQUE7QUNGRjs7QURLQTtFQUVFLGVBQUE7RUFHQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx1QkFBQTtBQ0xGOztBRFdBOzs7RUFHRSxjQUFBO0VBQ0EscUJBQUE7QUNSRjs7QURXQTtFQUNFLGNBQUE7QUNSRjs7QURXQTtFQUNFLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQ1JGOztBRFdBO0VBR0UsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsU0FBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtBQ1ZGIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG46aG9zdCB7XG4gIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsIFwiU2Vnb2UgVUlcIiwgUm9ib3RvLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmLCBcIkFwcGxlIENvbG9yIEVtb2ppXCIsIFwiU2Vnb2UgVUkgRW1vamlcIiwgXCJTZWdvZSBVSSBTeW1ib2xcIjtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBjb2xvcjogIzMzMztcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG59XG5cbmgxLFxuaDIsXG5oMyxcbmg0LFxuaDUsXG5oNiB7XG4gIG1hcmdpbjogOHB4IDA7XG59XG5cbnAge1xuICBtYXJnaW46IDA7XG59XG5cbi5zcGFjZXIge1xuICBmbGV4OiAxO1xufVxuXG4udG9vbGJhciB7XG4gIGhlaWdodDogNjBweDtcbiAgLy8gbWFyZ2luOiAtOHB4O1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogMTBweDtcbiAgLy8gZm9udC13ZWlnaHQ6IDYwMDtcbn1cblxuLnRvb2xiYXIgaW1nIHtcbiAgbWFyZ2luOiAwIDE2cHg7XG59XG5cbi5jb250ZW50IHtcbiAgLy8gbWFyZ2luOiAzMnB4IGF1dG87XG4gIHBhZGRpbmc6IDAgMzJweDtcbiAgLy8gbWF4LXdpZHRoOiA5NjBweDtcbiAgLy8gbWF4LXdpZHRoOiA5NjBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIC8vIHBhZGRpbmctYm90dG9tOiAyLjVyZW07XG4gIC8vIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIC8vIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbmEsXG5hOnZpc2l0ZWQsXG5hOmhvdmVyIHtcbiAgY29sb3I6ICMxOTc2ZDI7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuYTpob3ZlciB7XG4gIGNvbG9yOiAjMTI1Njk5O1xufVxuXG5mb290ZXIge1xuICBtYXJnaW4tdG9wOiBhdXRvO1xuICBoZWlnaHQ6IDIuNXJlbTtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTk3NmQyO1xuICBjb2xvcjogd2hpdGU7XG59XG5cbiNwYWdlLWNvbnRhaW5lciB7XG4gIC8vIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgLy8gbWluLWhlaWdodDogMTAwdmg7XG4gIG1pbi1oZWlnaHQ6IDEwMCU7XG4gIGhlaWdodDogMTAwdmg7XG4gIG1hcmdpbjogMDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cbiIsIjpob3N0IHtcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgXCJTZWdvZSBVSVwiLCBSb2JvdG8sIEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWYsIFwiQXBwbGUgQ29sb3IgRW1vamlcIiwgXCJTZWdvZSBVSSBFbW9qaVwiLCBcIlNlZ29lIFVJIFN5bWJvbFwiO1xuICBmb250LXNpemU6IDE0cHg7XG4gIGNvbG9yOiAjMzMzO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbn1cblxuaDEsXG5oMixcbmgzLFxuaDQsXG5oNSxcbmg2IHtcbiAgbWFyZ2luOiA4cHggMDtcbn1cblxucCB7XG4gIG1hcmdpbjogMDtcbn1cblxuLnNwYWNlciB7XG4gIGZsZXg6IDE7XG59XG5cbi50b29sYmFyIHtcbiAgaGVpZ2h0OiA2MHB4O1xuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogMTBweDtcbn1cblxuLnRvb2xiYXIgaW1nIHtcbiAgbWFyZ2luOiAwIDE2cHg7XG59XG5cbi5jb250ZW50IHtcbiAgcGFkZGluZzogMCAzMnB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbn1cblxuYSxcbmE6dmlzaXRlZCxcbmE6aG92ZXIge1xuICBjb2xvcjogIzE5NzZkMjtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG5hOmhvdmVyIHtcbiAgY29sb3I6ICMxMjU2OTk7XG59XG5cbmZvb3RlciB7XG4gIG1hcmdpbi10b3A6IGF1dG87XG4gIGhlaWdodDogMi41cmVtO1xuICB3aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMTBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzE5NzZkMjtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxOTc2ZDI7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuI3BhZ2UtY29udGFpbmVyIHtcbiAgbWluLWhlaWdodDogMTAwJTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgbWFyZ2luOiAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufSJdfQ== */";
     /***/
   },
 
@@ -808,16 +868,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.pyequionService = pyequionService;
         this.title = 'speciation-app';
+        this.numberCasesShow = 1;
       }
 
       _createClass(AppComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          console.log('App loaded');
           this.pyequionService.startUp().subscribe(function (resp) {
             return null;
           }); // this.pyequionService.createEquilibrium().subscribe(resp => {
           //   console.log(resp, '')
           // })
+        }
+      }, {
+        key: "handleAddMoreCases",
+        value: function handleAddMoreCases() {
+          this.numberCasesShow += 1;
+        }
+      }, {
+        key: "numbersCases",
+        get: function get() {
+          return Array(this.numberCasesShow).fill(0); // .map((x,i)=> i)
         }
       }]);
 
@@ -914,7 +986,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _math_math_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./math/math.module */
-    "./src/app/math/math.module.ts"); // import { MathjaxComponent } from './mathjax/mathjax.component';
+    "./src/app/math/math.module.ts");
+    /* harmony import */
+
+
+    var _equilibrium_calculation_equilibrium_calculation_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./equilibrium-calculation/equilibrium-calculation.component */
+    "./src/app/equilibrium-calculation/equilibrium-calculation.component.ts");
+    /* harmony import */
+
+
+    var _solution_results_step_solution_results_step_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./solution-results-step/solution-results-step.component */
+    "./src/app/solution-results-step/solution-results-step.component.ts");
+    /* harmony import */
+
+
+    var _species_input_step_species_input_step_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ./species-input-step/species-input-step.component */
+    "./src/app/species-input-step/species-input-step.component.ts"); // import { MathjaxComponent } from './mathjax/mathjax.component';
     // import { MatTableModule } from '@angular/material/table';
     // import { MatPaginatorModule } from '@angular/material/paginator';
     // import { MatSortModule } from '@angular/material/sort';
@@ -931,7 +1021,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _table_species_table_species_component__WEBPACK_IMPORTED_MODULE_4__["TableSpeciesComponent"], _stepper_stepper_component__WEBPACK_IMPORTED_MODULE_5__["StepperComponent"], _autocomplete_compound_autocomplete_compound_component__WEBPACK_IMPORTED_MODULE_6__["AutocompleteCompoundComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _table_species_table_species_component__WEBPACK_IMPORTED_MODULE_4__["TableSpeciesComponent"], _stepper_stepper_component__WEBPACK_IMPORTED_MODULE_5__["StepperComponent"], _autocomplete_compound_autocomplete_compound_component__WEBPACK_IMPORTED_MODULE_6__["AutocompleteCompoundComponent"], _equilibrium_calculation_equilibrium_calculation_component__WEBPACK_IMPORTED_MODULE_9__["EquilibriumCalculationComponent"], _solution_results_step_solution_results_step_component__WEBPACK_IMPORTED_MODULE_10__["SolutionResultsStepComponent"], _species_input_step_species_input_step_component__WEBPACK_IMPORTED_MODULE_11__["SpeciesInputStepComponent"]],
       imports: moduleListImport,
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -1057,6 +1147,272 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/constants.ts":
+  /*!******************************!*\
+    !*** ./src/app/constants.ts ***!
+    \******************************/
+
+  /*! exports provided: mapCloseEquationEnum, mapCloseEquationInverse, pCO2_ref, closingEquationTypes */
+
+  /***/
+  function srcAppConstantsTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "mapCloseEquationEnum", function () {
+      return mapCloseEquationEnum;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "mapCloseEquationInverse", function () {
+      return mapCloseEquationInverse;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "pCO2_ref", function () {
+      return pCO2_ref;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "closingEquationTypes", function () {
+      return closingEquationTypes;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var mapCloseEquationEnum = {
+      'OPEN': 0,
+      'CARBON_TOTAL': 1,
+      'PH': 2,
+      'NONE': 3
+    };
+    var mapCloseEquationInverse = {
+      0: 'OPEN',
+      1: 'CARBON_TOTAL',
+      2: 'PH',
+      3: 'NONE'
+    };
+    var pCO2_ref = 0.0003908408957924021;
+    var closingEquationTypes = [{
+      label: 'Open',
+      value: 0
+    }, {
+      label: 'Closed',
+      value: 1
+    }, {
+      label: 'pH',
+      value: 2
+    }, {
+      label: 'None',
+      value: mapCloseEquationEnum['NONE']
+    }];
+    /***/
+  },
+
+  /***/
+  "./src/app/equilibrium-calculation/equilibrium-calculation.component.scss":
+  /*!********************************************************************************!*\
+    !*** ./src/app/equilibrium-calculation/equilibrium-calculation.component.scss ***!
+    \********************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppEquilibriumCalculationEquilibriumCalculationComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VxdWlsaWJyaXVtLWNhbGN1bGF0aW9uL2VxdWlsaWJyaXVtLWNhbGN1bGF0aW9uLmNvbXBvbmVudC5zY3NzIn0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/equilibrium-calculation/equilibrium-calculation.component.ts":
+  /*!******************************************************************************!*\
+    !*** ./src/app/equilibrium-calculation/equilibrium-calculation.component.ts ***!
+    \******************************************************************************/
+
+  /*! exports provided: EquilibriumCalculationComponent */
+
+  /***/
+  function srcAppEquilibriumCalculationEquilibriumCalculationComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "EquilibriumCalculationComponent", function () {
+      return EquilibriumCalculationComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _pyequion_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../pyequion-store.service */
+    "./src/app/pyequion-store.service.ts");
+    /* harmony import */
+
+
+    var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../constants */
+    "./src/app/constants.ts");
+
+    var EquilibriumCalculationComponent =
+    /*#__PURE__*/
+    function () {
+      function EquilibriumCalculationComponent(fb, pyequionStore) {
+        _classCallCheck(this, EquilibriumCalculationComponent);
+
+        this.fb = fb;
+        this.pyequionStore = pyequionStore; // @Input() isLoading
+
+        this.mapCloseEquationEnumTmplt = _constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationEnum"]; // equilibriumCalcForm: FormGroup;
+
+        this.mapCloseEquationLabel = {
+          0: 'CO2 Pressure (atm)',
+          1: 'Total Carbone (mM??)',
+          2: 'pH',
+          3: null
+        };
+        this.nonIdealitiesTypes = [{
+          label: 'Debye-Huckel (B-dot)',
+          value: 'DEBYE'
+        }, {
+          label: 'Pitzer',
+          value: 'PITZER'
+        }, {
+          label: 'Bromley',
+          value: 'BROMLEY'
+        }, {
+          label: 'SIT',
+          value: 'SIT'
+        }];
+      }
+
+      _createClass(EquilibriumCalculationComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this2 = this;
+
+          // this.equilibriumCalcForm = this.fb.group({
+          //   // secondCtrl: ['', Validators.required],
+          //   concentrations: this.fb.array([
+          //     this.fb.control(1.0, Validators.required)
+          //   ]),
+          //   temperature: [25.0, Validators.required],
+          //   extraParameter: [null],
+          //   allowPrecipitation: [false, Validators.required],
+          //   nonidealityType: ['DEBYE', Validators.required],
+          // });
+          // this.setupFormFromInputs()
+          this.pyequionStore.eqSystem$.subscribe(function (eqSys) {
+            _this2.setupFormFromInputs();
+          });
+        }
+      }, {
+        key: "setupFormFromInputs",
+        value: function setupFormFromInputs() {
+          var extraPrmtrCtrl = this.equilibriumCalcForm.get('extraParameter');
+          var concVals = this.equilibriumCalcForm.get('concentrations').value;
+          var closeVal = this.compoundsInputForm.get('closingEqType').value;
+          var compoundsVals = this.compoundsInput;
+          if (_constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationInverse"][closeVal] == 'OPEN') extraPrmtrCtrl.setValue(_constants__WEBPACK_IMPORTED_MODULE_4__["pCO2_ref"]);else if (_constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationInverse"][closeVal] == 'PH') extraPrmtrCtrl.setValue(7.0);else if (_constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationInverse"][closeVal] == 'CARBON_TOTAL') {
+            var idxCarbon = concVals.map(function (v, i) {
+              var splt = compoundsVals[i].split(/(?=[A-Z])/);
+              var ck = splt.includes('C');
+              return ck ? i : undefined;
+            }).filter(function (x) {
+              return x !== undefined;
+            });
+
+            if (concVals) {
+              var sm = 0.0;
+
+              for (var index = 0; index < concVals.length; index++) {
+                var conc = concVals[index];
+                if (idxCarbon.includes(index)) sm += conc;
+              }
+
+              extraPrmtrCtrl.setValue(sm);
+            }
+
+            console.log('depois');
+          }
+        }
+      }, {
+        key: "handleCalculateEquilibrium",
+        value: function handleCalculateEquilibrium() {
+          this.pyequionStore.emitValueSolutionResults(null);
+          var calcEqInputsFromForm = this.equilibriumCalcForm.value;
+          var sysEqSerialized = this.pyequionStore.getValueEqSystem().sys_eq;
+          var inputToEqCalc = Object.assign({}, calcEqInputsFromForm, {
+            sys_eq: sysEqSerialized
+          });
+          this.pyequionStore.calculateEquilibrium(inputToEqCalc);
+          console.log('aow');
+        }
+      }]);
+
+      return EquilibriumCalculationComponent;
+    }();
+
+    EquilibriumCalculationComponent.ctorParameters = function () {
+      return [{
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+      }, {
+        type: _pyequion_store_service__WEBPACK_IMPORTED_MODULE_3__["PyequionStoreService"]
+      }];
+    };
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], EquilibriumCalculationComponent.prototype, "compoundsInputForm", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], EquilibriumCalculationComponent.prototype, "equilibriumCalcForm", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], EquilibriumCalculationComponent.prototype, "eqSys", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], EquilibriumCalculationComponent.prototype, "compoundsInput", void 0);
+    EquilibriumCalculationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-equilibrium-calculation',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./equilibrium-calculation.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/equilibrium-calculation/equilibrium-calculation.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./equilibrium-calculation.component.scss */
+      "./src/app/equilibrium-calculation/equilibrium-calculation.component.scss")).default]
+    })], EquilibriumCalculationComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/math/math.directive.ts":
   /*!****************************************!*\
     !*** ./src/app/math/math.directive.ts ***!
@@ -1121,10 +1477,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(MathDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.service.ready().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.alive$)).subscribe(function (res) {
-            _this2.service.render(_this2._el, _this2.appMath);
+            _this3.service.render(_this3._el, _this3.appMath);
           });
         }
       }, {
@@ -1619,7 +1975,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function PyequionStoreService(pyequionService) {
-        var _this3 = this;
+        var _this4 = this;
 
         _classCallCheck(this, PyequionStoreService);
 
@@ -1631,16 +1987,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.solutionResult$ = this.solutionResultSubject.asObservable();
         this.reactionsLatex$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
           if (!eqSystem) return null;
-          var convertedReacs = eqSystem.reactionsLatex.map(_this3.fixReactionLatex());
+          var convertedReacs = eqSystem.reactionsLatex.map(_this4.fixReactionLatex());
           return convertedReacs;
+        }));
+        this.reactionsLatexAsConcatenatedString$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
+          if (!eqSystem) return null;
+          var convertedReacs = eqSystem.reactionsLatex.map(_this4.fixReactionLatex()); // return convertedReacs
+          // return '$a^2$'
+
+          return {
+            latex: '$' + convertedReacs.join('\\\\ ') + '$'
+          };
         }));
         this.solidReactionsLatex$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
           if (!eqSystem) return null;
-          var convertedReacs = eqSystem.solidReactionsLatex.map(_this3.fixReactionLatex());
+          var convertedReacs = eqSystem.solidReactionsLatex.map(_this4.fixReactionLatex());
           if (convertedReacs.length == 1 && convertedReacs[0] == "\\ce <=}") return null; //some kind of bug... (fix backend?)
 
           console.log(convertedReacs);
           return convertedReacs;
+        }));
+        this.solidReactionsLatexAsConcatenatedString$ = this.eqSystem$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (eqSystem) {
+          if (!eqSystem) return null;
+          var convertedReacs = eqSystem.solidReactionsLatex.map(_this4.fixReactionLatex());
+          if (convertedReacs.length == 1 && convertedReacs[0] == "\\ce <=}") return null; //some kind of bug... (fix backend?)
+          // console.log(convertedReacs);
+          // return convertedReacs
+
+          return {
+            latex: '$' + convertedReacs.join('\\\\ ') + '$'
+          };
         }));
       }
 
@@ -1836,16 +2212,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(PyequionService, [{
         key: "startUp",
         value: function startUp() {
-          var _this4 = this;
+          var _this5 = this;
 
           var body = {
             "jsonrpc": "2.0",
             "method": "App.startup",
             "params": {},
-            "id": "1"
+            "id": "3"
           };
           return this.http.post(URL, body, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (payload) {
-            return _this4.log("startup");
+            return _this5.log("startup");
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["exhaustMap"])(function (resp) {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(resp);
           }), //(resp => of(resp)),
@@ -1866,7 +2242,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createEquilibrium",
         value: function createEquilibrium(inputCompounds) {
-          var _this5 = this;
+          var _this6 = this;
 
           var body = {
             "jsonrpc": "2.0",
@@ -1875,11 +2251,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "id": "1"
           };
           return this.http.post(URL, body, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (newHero) {
-            return _this5.log("posted");
+            return _this6.log("posted");
           }), // debounceTime(1000),
-          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["exhaustMap"])(function (resp) {
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(resp);
-          }), //(resp => of(resp)),
+          // distinctUntilChanged(), //RETURN ME AFTER CHECKING WITH ASYNC SERVER (G CLOUD)
+          // exhaustMap(resp => of(resp)), //(resp => of(resp)),
           Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (resp) {
             console.log('HIT MAP in Post CREATE');
 
@@ -1897,7 +2272,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "calculateEquilibrium",
         value: function calculateEquilibrium(inputEqCalculation) {
-          var _this6 = this;
+          var _this7 = this;
 
           var body = {
             "jsonrpc": "2.0",
@@ -1906,7 +2281,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "id": "1"
           };
           return this.http.post(URL, body, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (newHero) {
-            return _this6.log("posted");
+            return _this7.log("posted");
           }), // debounceTime(1000),
           Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["exhaustMap"])(function (resp) {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(resp);
@@ -1937,7 +2312,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handleError",
         value: function handleError() {
-          var _this7 = this;
+          var _this8 = this;
 
           var operation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'operation';
           var result = arguments.length > 1 ? arguments[1] : undefined;
@@ -1946,7 +2321,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.error(error); // log to console instead
             // TODO: better job of transforming error for user consumption
 
-            _this7.log("".concat(operation, " failed: ").concat(error.message)); // Let the app keep running by returning an empty result.
+            _this8.log("".concat(operation, " failed: ").concat(error.message)); // Let the app keep running by returning an empty result.
 
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
@@ -1970,7 +2345,283 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     PyequionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
-    })], PyequionService);
+    }), Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], PyequionService);
+    /***/
+  },
+
+  /***/
+  "./src/app/solution-results-step/solution-results-step.component.scss":
+  /*!****************************************************************************!*\
+    !*** ./src/app/solution-results-step/solution-results-step.component.scss ***!
+    \****************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSolutionResultsStepSolutionResultsStepComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NvbHV0aW9uLXJlc3VsdHMtc3RlcC9zb2x1dGlvbi1yZXN1bHRzLXN0ZXAuY29tcG9uZW50LnNjc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/solution-results-step/solution-results-step.component.ts":
+  /*!**************************************************************************!*\
+    !*** ./src/app/solution-results-step/solution-results-step.component.ts ***!
+    \**************************************************************************/
+
+  /*! exports provided: SolutionResultsStepComponent */
+
+  /***/
+  function srcAppSolutionResultsStepSolutionResultsStepComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SolutionResultsStepComponent", function () {
+      return SolutionResultsStepComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _pyequion_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../pyequion-store.service */
+    "./src/app/pyequion-store.service.ts");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var SolutionResultsStepComponent =
+    /*#__PURE__*/
+    function () {
+      function SolutionResultsStepComponent(pyequionStore) {
+        _classCallCheck(this, SolutionResultsStepComponent);
+
+        this.pyequionStore = pyequionStore;
+        this.objectKeys = Object.keys;
+        this.speciesDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
+          if (!solRst) return null;
+          var collection = solRst.specie_names.map(function (v, i) {
+            return {
+              name: v,
+              conc: solRst.c_molal[i]
+            };
+          }).filter(function (val) {
+            return val.name !== 'H2O' && !val.name.includes('g');
+          });
+          return collection;
+        }));
+        this.precipitatedDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
+          if (!solRst) return null;
+          var greaterZero = Object.keys(solRst.preciptation_conc).filter(function (key) {
+            return solRst.preciptation_conc[key] > 1e-20;
+          });
+          return greaterZero;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (names) {
+          if (!names) return null;
+          return !!names.length;
+        }));
+      }
+
+      _createClass(SolutionResultsStepComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return SolutionResultsStepComponent;
+    }();
+
+    SolutionResultsStepComponent.ctorParameters = function () {
+      return [{
+        type: _pyequion_store_service__WEBPACK_IMPORTED_MODULE_2__["PyequionStoreService"]
+      }];
+    };
+
+    SolutionResultsStepComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-solution-results-step',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./solution-results-step.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/solution-results-step/solution-results-step.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./solution-results-step.component.scss */
+      "./src/app/solution-results-step/solution-results-step.component.scss")).default]
+    })], SolutionResultsStepComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/species-input-step/species-input-step.component.scss":
+  /*!**********************************************************************!*\
+    !*** ./src/app/species-input-step/species-input-step.component.scss ***!
+    \**********************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSpeciesInputStepSpeciesInputStepComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "mat-horizontal-stepper {\n  width: 100%;\n}\n\n.compound-input {\n  display: flex;\n  flex-direction: row;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2NhaW8vUHJvamVjdHMvQ2FyYm9uYXRlRGVwb3NpdGlvbi9SZXBvc2l0b3JpZXMvcHllcXVpb24tdmlld2VyL3NyYy9hcHAvc3BlY2llcy1pbnB1dC1zdGVwL3NwZWNpZXMtaW5wdXQtc3RlcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc3BlY2llcy1pbnB1dC1zdGVwL3NwZWNpZXMtaW5wdXQtc3RlcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7QUNDRjs7QURFQTtFQUNFLGFBQUE7RUFDQSxtQkFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvc3BlY2llcy1pbnB1dC1zdGVwL3NwZWNpZXMtaW5wdXQtc3RlcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1ob3Jpem9udGFsLXN0ZXBwZXIge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNvbXBvdW5kLWlucHV0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbn1cbiIsIm1hdC1ob3Jpem9udGFsLXN0ZXBwZXIge1xuICB3aWR0aDogMTAwJTtcbn1cblxuLmNvbXBvdW5kLWlucHV0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbn0iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/species-input-step/species-input-step.component.ts":
+  /*!********************************************************************!*\
+    !*** ./src/app/species-input-step/species-input-step.component.ts ***!
+    \********************************************************************/
+
+  /*! exports provided: SpeciesInputStepComponent */
+
+  /***/
+  function srcAppSpeciesInputStepSpeciesInputStepComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SpeciesInputStepComponent", function () {
+      return SpeciesInputStepComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../constants */
+    "./src/app/constants.ts");
+
+    var SpeciesInputStepComponent =
+    /*#__PURE__*/
+    function () {
+      function SpeciesInputStepComponent(fb) {
+        _classCallCheck(this, SpeciesInputStepComponent);
+
+        this.fb = fb;
+        this.onClickCreateEquilibrium = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.closingEquationTypes = [{
+          label: 'Open - CO2(g)',
+          value: 0
+        }, {
+          label: 'Total Inorganic Carbon',
+          value: 1
+        }, {
+          label: 'pH (to do)',
+          value: 2
+        }, {
+          label: 'None',
+          value: _constants__WEBPACK_IMPORTED_MODULE_3__["mapCloseEquationEnum"]['NONE']
+        }];
+      }
+
+      _createClass(SpeciesInputStepComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "handleMoreInputCompound",
+        value: function handleMoreInputCompound() {
+          this.compoundsInput.push(this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
+          this.concentrations.push(this.fb.control(1.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
+        }
+      }, {
+        key: "handleRemoveCompound",
+        value: function handleRemoveCompound(i) {
+          if (!this.compoundsInput.length) return;
+
+          if (this.compoundsInput.length == 1) {
+            this.compoundsInput.controls[i].setValue('');
+            return;
+          }
+
+          if (i + 1 === this.compoundsInput.length) {
+            this.compoundsInput.controls[i].setValue('');
+          }
+
+          this.compoundsInput.controls.splice(i, 1);
+          this.concentrations.controls.splice(i, 1);
+        }
+      }, {
+        key: "compoundsInput",
+        get: function get() {
+          return this.compoundsInputForm.get('compounds');
+        }
+      }, {
+        key: "concentrations",
+        get: function get() {
+          return this.equilibriumCalcForm.get('concentrations');
+        }
+      }, {
+        key: "closingEqType",
+        get: function get() {
+          return this.compoundsInputForm.get('closingEqType');
+        }
+      }]);
+
+      return SpeciesInputStepComponent;
+    }();
+
+    SpeciesInputStepComponent.ctorParameters = function () {
+      return [{
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+      }];
+    };
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], SpeciesInputStepComponent.prototype, "compoundsInputForm", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], SpeciesInputStepComponent.prototype, "equilibriumCalcForm", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], SpeciesInputStepComponent.prototype, "onClickCreateEquilibrium", void 0);
+    SpeciesInputStepComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-species-input-step',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./species-input-step.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/species-input-step/species-input-step.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./species-input-step.component.scss */
+      "./src/app/species-input-step/species-input-step.component.scss")).default]
+    })], SpeciesInputStepComponent);
     /***/
   },
 
@@ -2034,209 +2685,84 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
+    var _pyequion_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../pyequion-store.service */
+    "./src/app/pyequion-store.service.ts");
     /* harmony import */
 
 
-    var _pyequion_store_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ../pyequion-store.service */
-    "./src/app/pyequion-store.service.ts");
+    var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../constants */
+    "./src/app/constants.ts");
+    /* harmony import */
 
-    var pCO2_ref = 0.0003908408957924021;
-    var mapCloseEquationEnum = {
-      'OPEN': 0,
-      'CARBON_TOTAL': 1,
-      'PH': 2,
-      'NONE': 3
-    };
-    var mapCloseEquationInverse = {
-      0: 'OPEN',
-      1: 'CARBON_TOTAL',
-      2: 'PH',
-      3: 'NONE'
-    };
-    var mapTypeActivityCalculation = {
-      'IDEAL': 0,
-      'DEBYE': 1,
-      'DEBYE_MEAN': 2,
-      'PITZER': 3
-    };
+
+    var _pyequion_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../pyequion.service */
+    "./src/app/pyequion.service.ts");
 
     var StepperComponent =
     /*#__PURE__*/
     function () {
+      // reactionsDisplay$: Observable<string> = this.pyequionStore.reactionsLatex$.pipe(
+      //   map(this.mergeLatexReactions())
+      // )
+      // solidReactionsDisplay$: Observable<string> = this.pyequionStore.solidReactionsLatex$.pipe(
+      //   map(this.mergeLatexReactions())
+      // )
+      // speciesDisplay$: Observable<any[]> = this.pyequionStore.solutionResult$.pipe(
+      //   map(solRst => {
+      //     if (!solRst)
+      //       return null
+      //     const collection = solRst.specie_names.map((v,i) => {
+      //       return {
+      //         name: v,
+      //         conc: solRst.c_molal[i]
+      //       }
+      //     }).filter(val => val.name !== 'H2O' && (!val.name.includes('g')))
+      //     return collection
+      //   })
+      // )
+      // precipitatedDisplay$: Observable<any[]> = this.pyequionStore.solutionResult$.pipe(
+      //   map(solRst => {
+      //     if (!solRst)
+      //       return null
+      //     const greaterZero = Object.keys(solRst.preciptation_conc).filter(key => {
+      //       return solRst.preciptation_conc[key] > 1e-20
+      //     })
+      //     return greaterZero
+      //   }),
+      //   filter(names => {
+      //     if (!names)
+      //       return null
+      //     return(!!names.length)
+      //   }
+      // ))
       function StepperComponent(fb, pyequionStore) {
         _classCallCheck(this, StepperComponent);
 
         this.fb = fb;
         this.pyequionStore = pyequionStore;
-        this.objectKeys = Object.keys; // private eqSystemSubject = new BehaviorSubject<EquilibriumModel>(null);
-        // public eqSystem$ = this.eqSystemSubject.asObservable();
-
-        this.NONE = mapCloseEquationEnum['NONE'];
-        this.isLinear = false; // reactions$: Observable<any[]>
-        // readonly NONE_VAL = 3
-
-        this.closingEquationTypes = [{
-          label: 'Open',
-          value: 0
-        }, {
-          label: 'Closed',
-          value: 1
-        }, {
-          label: 'pH',
-          value: 2
-        }, {
-          label: 'None',
-          value: mapCloseEquationEnum['NONE']
-        }];
-        this.mapCloseEquationLabel = {
-          0: 'CO2 Pressure (atm)',
-          1: 'Total Carbone (mM??)',
-          2: 'pH',
-          3: null
-        };
-        this.nonIdealitiesTypes = [{
-          label: 'Debye-Huckel (B-dot)',
-          value: 'DEBYE'
-        }, {
-          label: 'Pitzer',
-          value: 'PITZER'
-        }];
-        this.reactionsDisplay$ = this.pyequionStore.reactionsLatex$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.mergeLatexReactions()));
-        this.solidReactionsDisplay$ = this.pyequionStore.solidReactionsLatex$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(this.mergeLatexReactions()));
-        this.speciesDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
-          if (!solRst) return null;
-          var collection = solRst.specie_names.map(function (v, i) {
-            return {
-              name: v,
-              conc: solRst.c_molal[i]
-            };
-          }).filter(function (val) {
-            return val.name !== 'H2O' && !val.name.includes('g');
-          });
-          return collection;
-        }));
-        this.precipitatedDisplay$ = this.pyequionStore.solutionResult$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (solRst) {
-          if (!solRst) return null;
-          var greaterZero = Object.keys(solRst.preciptation_conc).filter(function (key) {
-            return solRst.preciptation_conc[key] > 1e-20;
-          });
-          return greaterZero;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (names) {
-          if (!names) return null;
-          return !!names.length;
-        }));
+        this.objectKeys = Object.keys;
+        this.NONE = _constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationEnum"]['NONE'];
+        this.isLinear = false;
       }
 
       _createClass(StepperComponent, [{
-        key: "mergeLatexReactions",
-        value: function mergeLatexReactions() {
-          return function (reactions) {
-            if (!reactions) return null;
-            var allReactions = '';
-            reactions.forEach(function (v) {
-              allReactions += "".concat(v, " \\\\");
-            });
-            return allReactions;
-          };
-        }
-      }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this8 = this;
-
-          // this.firstFormGroup = this.fb.group({
-          //   firstCtrl: ['', Validators.required]
-          // });
           this.compoundsInputForm = this.fb.group({
             compounds: this.fb.array([this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)]),
-            closingEqType: [mapCloseEquationEnum['NONE'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            closingEqType: [_constants__WEBPACK_IMPORTED_MODULE_4__["mapCloseEquationEnum"]['NONE'], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             initial_feed_mass_balance: ['']
           });
           this.equilibriumCalcForm = this.fb.group({
-            // secondCtrl: ['', Validators.required],
             concentrations: this.fb.array([this.fb.control(1.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)]),
             temperature: [25.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             extraParameter: [null],
             allowPrecipitation: [false, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             nonidealityType: ['DEBYE', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
           });
-          this.pyequionStore.eqSystem$.subscribe(function (eqSys) {
-            // if (!eqSys)
-            //   return
-            var extraPrmtrCtrl = _this8.equilibriumCalcForm.get('extraParameter');
-
-            var closeVal = _this8.compoundsInputForm.get('closingEqType').value;
-
-            var concVals = _this8.equilibriumCalcForm.get('concentrations').value;
-
-            var compoundsVals = _this8.compoundsInput.value;
-            if (mapCloseEquationInverse[closeVal] == 'OPEN') extraPrmtrCtrl.setValue(pCO2_ref);else if (mapCloseEquationInverse[closeVal] == 'PH') extraPrmtrCtrl.setValue(7.0);else if (mapCloseEquationInverse[closeVal] == 'CARBON_TOTAL') {
-              var idxCarbon = concVals.map(function (v, i) {
-                var splt = compoundsVals[i].split(/(?=[A-Z])/);
-                var ck = splt.includes('C');
-                return ck ? i : undefined;
-              }).filter(function (x) {
-                return x !== undefined;
-              });
-
-              if (concVals) {
-                var sm = 0.0;
-
-                for (var index = 0; index < concVals.length; index++) {
-                  var conc = concVals[index];
-                  if (idxCarbon.includes(index)) sm += conc;
-                }
-
-                extraPrmtrCtrl.setValue(sm);
-              }
-
-              console.log('depois');
-            }
-          }); // this.pyequionStore.solutionResult$.subscribe((solRslt: any) => {
-          //   console.log('HIT AQUI');
-          //   if (!solRslt)
-          //     return
-          //   const idxH2O = solRslt.specie_names.findIndex(v => v === 'H2O')//[0]
-          //   // this.indexSpeciesShow = Array(solRslt.specie_names.length-1).fill(0).map((v,i) => {
-          //   //   return i === idxH2O ?
-          //   // })
-          //   solRslt.specie_names.splice(idxH2O,1)
-          //   solRslt.c_molal.splice(idxH2O,1)
-          //   // this.indexSpeciesShow = []
-          //   // // for (const iterator of solRslt.specie_names) {
-          //   //   for (let index = 0; index < solRslt.specie_names.length; index++) {
-          //   //     if ()
-          //   //   this.indexSpeciesShow.push()
-          //   //   }
-          // })
-        }
-      }, {
-        key: "handleMoreInputCompound",
-        value: function handleMoreInputCompound() {
-          this.compoundsInput.push(this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
-          this.concentrations.push(this.fb.control(1.0, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required));
-        }
-      }, {
-        key: "handleRemoveCompound",
-        value: function handleRemoveCompound(i) {
-          if (!this.compoundsInput.length) return;
-
-          if (this.compoundsInput.length == 1) {
-            this.compoundsInput.controls[i].setValue('');
-            return;
-          }
-
-          if (i + 1 === this.compoundsInput.length) {
-            this.compoundsInput.controls[i].setValue('');
-          }
-
-          this.compoundsInput.controls.splice(i, 1);
-          this.concentrations.controls.splice(i, 1); // this.compoundsInput.push(this.fb.control('', Validators.required));
-          // this.concentrations.push(this.fb.control(1.0, Validators.required));
         }
       }, {
         key: "handleCreateEquilibrium",
@@ -2250,18 +2776,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.pyequionStore.createEquilibrium(compInput);
         }
       }, {
-        key: "handleCalculateEquilibrium",
-        value: function handleCalculateEquilibrium() {
-          this.pyequionStore.emitValueSolutionResults(null);
-          var calcEqInputsFromForm = this.equilibriumCalcForm.value;
-          var sysEqSerialized = this.pyequionStore.getValueEqSystem().sys_eq;
-          var inputToEqCalc = Object.assign({}, calcEqInputsFromForm, {
-            sys_eq: sysEqSerialized
-          });
-          this.pyequionStore.calculateEquilibrium(inputToEqCalc);
-          console.log('aow');
-        }
-      }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {// this.eqSystemSubject.unsubscribe()
         }
@@ -2269,17 +2783,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "compoundsInput",
         get: function get() {
           return this.compoundsInputForm.get('compounds');
-        }
-      }, {
-        key: "concentrations",
-        get: function get() {
-          return this.equilibriumCalcForm.get('concentrations');
-        }
-      }, {
-        key: "closingEqType",
-        get: function get() {
-          // console.log(this.compoundsInputForm.get('compounds').value)
-          return this.compoundsInputForm.get('closingEqType'); //as FormControl
         }
       }]);
 
@@ -2290,7 +2793,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [{
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
       }, {
-        type: _pyequion_store_service__WEBPACK_IMPORTED_MODULE_4__["PyequionStoreService"]
+        type: _pyequion_store_service__WEBPACK_IMPORTED_MODULE_3__["PyequionStoreService"]
       }];
     };
 
@@ -2299,6 +2802,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./stepper.component.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/stepper/stepper.component.html")).default,
+      providers: [_pyequion_store_service__WEBPACK_IMPORTED_MODULE_3__["PyequionStoreService"], _pyequion_service__WEBPACK_IMPORTED_MODULE_5__["PyequionService"]],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./stepper.component.scss */
       "./src/app/stepper/stepper.component.scss")).default]
